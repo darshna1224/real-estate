@@ -63,6 +63,7 @@ class Sizes {
   static const double s94 = 94;
   static const double s98 = 98;
   static const double s100 = 100;
+  static const double s103 = 103;
   static const double s107 = 107;
   static const double s108 = 108;
   static const double s110 = 110;

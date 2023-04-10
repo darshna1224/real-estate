@@ -359,7 +359,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ]),
                   ScreenUtil().setVerticalSpacing(26),
-                  Column(
+                   Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Padding(
@@ -394,340 +394,506 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                         ),
                       ),
                       ScreenUtil().setVerticalSpacing(Sizes.s24.h),
-                      Container(
-                        height: Sizes.s270.h,
-                        child: SizedBox(
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Container(
                           height: Sizes.s270.h,
-                          child: GridView.count(
-                            scrollDirection: Axis.horizontal,
-                            crossAxisCount: 1,
-                            childAspectRatio: 1.8,
-                            mainAxisSpacing: 15,
-                            children: List.generate(5, (index) {
-                              return Container(
-                                decoration: BoxDecoration(
-                                    color: ThemeColors().white,
-                                    borderRadius:
-                                        BorderRadius.circular(Sizes.s15.r)),
-                                height: Sizes.s265.h,
-                                width: Sizes.s177.h,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(10.0),
-                                  child: Column(
-                                    children: [
-                                      ClipRRect(
-                                        borderRadius: BorderRadius.circular(
-                                            Sizes.s15.r),
-                                        child: Stack(
-                                          children: [
-                                            Container(
-                                              height: Sizes.s157.w,
-                                              width: Sizes.s157.w,
-                                              decoration:
-                                                  const BoxDecoration(
-                                                      image:
-                                                          DecorationImage(
-                                                              image:
-                                                                  AssetImage(
-                                                                'assets/images/image/download3.jpeg',
-                                                              ),
-                                                              fit: BoxFit
-                                                                  .cover)),
-                                            ),
-                                            Positioned(
-                                              top: 11,
-                                              right: 11,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                    borderRadius:
-                                                        BorderRadius
-                                                            .circular(
-                                                                Sizes.s5.r),
-                                                    color: ThemeColors()
-                                                        .white
-                                                        .withOpacity(0.5)),
-                                                height: Sizes.s19.h,
-                                                width: Sizes.s19.w,
-                                                child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.all(
-                                                          6.0),
-                                                  child: Icon(
-                                                    CupertinoIcons
-                                                        .bookmark_fill,
-                                                    size: 10,
-                                                    color:
-                                                        ThemeColors().white,
+                          child: SizedBox(
+                            height: Sizes.s270.h,
+                            child: GridView.count(
+                              scrollDirection: Axis.horizontal,
+                              crossAxisCount: 1,
+                              childAspectRatio: 1.8,
+                              mainAxisSpacing: 15,
+                              children: List.generate(5, (index) {
+                                return Container(
+                                  decoration: BoxDecoration(
+                                      color: ThemeColors().white,
+                                      borderRadius:
+                                          BorderRadius.circular(Sizes.s15.r)),
+                                  height: Sizes.s265.h,
+                                  width: Sizes.s177.h,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Column(
+                                      children: [
+                                        ClipRRect(
+                                          borderRadius: BorderRadius.circular(
+                                              Sizes.s15.r),
+                                          child: Stack(
+                                            children: [
+                                              Container(
+                                                height: Sizes.s157.w,
+                                                width: Sizes.s157.w,
+                                                decoration: const BoxDecoration(
+                                                    image: DecorationImage(
+                                                        image: AssetImage(
+                                                          'assets/images/image/download3.jpeg',
+                                                        ),
+                                                        fit: BoxFit.cover)),
+                                              ),
+                                              Positioned(
+                                                top: 11,
+                                                right: 11,
+                                                child: Container(
+                                                  decoration: BoxDecoration(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              Sizes.s5.r),
+                                                      color: ThemeColors()
+                                                          .white
+                                                          .withOpacity(0.5)),
+                                                  height: Sizes.s19.h,
+                                                  width: Sizes.s19.w,
+                                                  child: Padding(
+                                                    padding:
+                                                        const EdgeInsets.all(
+                                                            6.0),
+                                                    child: Icon(
+                                                      CupertinoIcons
+                                                          .bookmark_fill,
+                                                      size: 10,
+                                                      color:
+                                                          ThemeColors().white,
+                                                    ),
                                                   ),
                                                 ),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                        ScreenUtil()
+                                            .setVerticalSpacing(Sizes.s12.h),
+                                        Row(
+                                          children: [
+                                            Expanded(
+                                              child: Text(
+                                                'Studio Apartment',
+                                                maxLines: 2,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: Sizes.s13.sp),
+                                              ),
+                                            ),
+                                            ScreenUtil().setHorizontalSpacing(
+                                                Sizes.s2.w),
+                                            Expanded(
+                                              child: Text(
+                                                '\$24,532',
+                                                maxLines: 1,
+                                                overflow: TextOverflow.ellipsis,
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.w700,
+                                                    fontSize: Sizes.s14.sp,
+                                                    color:
+                                                        ThemeColors().orange),
                                               ),
                                             )
                                           ],
                                         ),
-                                      ),
-                                      ScreenUtil()
-                                          .setVerticalSpacing(Sizes.s12.h),
-                                      Row(
-                                        children: [
-                                          Expanded(
-                                            child: Text(
-                                              'Studio Apartment',
-                                              maxLines: 2,
-                                              overflow:
-                                                  TextOverflow.ellipsis,
-                                              style: TextStyle(
-                                                  fontWeight:
-                                                      FontWeight.w700,
-                                                  fontSize: Sizes.s13.sp),
+                                        ScreenUtil().setVerticalSpacing(18.0),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Column(
+                                              children: [
+                                                SvgPicture.asset(
+                                                  AppAssets.bedIcon,
+                                                  // color: ThemeColors().textColor,
+                                                ),
+                                                RichText(
+                                                    text: TextSpan(
+                                                        style: TextStyle(
+                                                            color: ThemeColors()
+                                                                .textColor),
+                                                        children: const [
+                                                      TextSpan(text: '3'),
+                                                      TextSpan(text: ' Bed'),
+                                                    ]))
+                                              ],
                                             ),
-                                          ),
-                                          ScreenUtil().setHorizontalSpacing(
-                                              Sizes.s2.w),
-                                          Expanded(
-                                            child: Text(
-                                              '\$24,532',
-                                              maxLines: 1,
-                                              overflow:
-                                                  TextOverflow.ellipsis,
-                                              style: TextStyle(
-                                                  fontWeight:
-                                                      FontWeight.w700,
-                                                  fontSize: Sizes.s14.sp,
+                                            Column(
+                                              children: [
+                                                SvgPicture.asset(
+                                                  AppAssets.bathIcon,
                                                   color:
-                                                      ThemeColors().orange),
+                                                      ThemeColors().textColor,
+                                                ),
+                                                RichText(
+                                                    text: TextSpan(
+                                                        style: TextStyle(
+                                                            color: ThemeColors()
+                                                                .textColor),
+                                                        children: const [
+                                                      TextSpan(text: '2'),
+                                                      TextSpan(text: ' Bath'),
+                                                    ]))
+                                              ],
                                             ),
-                                          )
-                                        ],
-                                      ),
-                                      ScreenUtil().setVerticalSpacing(18.0),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Column(
-                                            children: [
-                                              SvgPicture.asset(
-                                                AppAssets.bedIcon,
-                                                // color: ThemeColors().textColor,
-                                              ),
-                                              RichText(
-                                                  text: TextSpan(
-                                                      style: TextStyle(
-                                                          color: ThemeColors()
-                                                              .textColor),
-                                                      children: const [
-                                                    TextSpan(text: '3'),
-                                                    TextSpan(text: ' Bed'),
-                                                  ]))
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              SvgPicture.asset(
-                                                AppAssets.bathIcon,
-                                                color:
-                                                    ThemeColors().textColor,
-                                              ),
-                                              RichText(
-                                                  text: TextSpan(
-                                                      style: TextStyle(
-                                                          color: ThemeColors()
-                                                              .textColor),
-                                                      children: const [
-                                                    TextSpan(text: '2'),
-                                                    TextSpan(text: ' Bath'),
-                                                  ]))
-                                            ],
-                                          ),
-                                          Column(
-                                            children: [
-                                              SvgPicture.asset(
-                                                AppAssets.carIcon,
-                                                color:
-                                                    ThemeColors().textColor,
-                                              ),
-                                              RichText(
-                                                  text: TextSpan(
-                                                      style: TextStyle(
-                                                          color: ThemeColors()
-                                                              .textColor),
-                                                      children: const [
-                                                    TextSpan(text: '2'),
-                                                    TextSpan(
-                                                        text: ' Parking'),
-                                                  ]))
-                                            ],
-                                          )
-                                        ],
-                                      )
-                                    ],
+                                            Column(
+                                              children: [
+                                                SvgPicture.asset(
+                                                  AppAssets.carIcon,
+                                                  color:
+                                                      ThemeColors().textColor,
+                                                ),
+                                                RichText(
+                                                    text: TextSpan(
+                                                        style: TextStyle(
+                                                            color: ThemeColors()
+                                                                .textColor),
+                                                        children: const [
+                                                      TextSpan(text: '2'),
+                                                      TextSpan(
+                                                          text: ' Parking'),
+                                                    ]))
+                                              ],
+                                            )
+                                          ],
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              );
-                            }),
+                                );
+                              }),
+                            ),
                           ),
                         ),
                       ),
                       ScreenUtil().setVerticalSpacing(Sizes.s24.h),
-
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 30),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            RichText(
+                                text: TextSpan(
+                                    style: TextStyle(fontSize: Sizes.s15.sp),
+                                    children: [
+                                  TextSpan(
+                                    text: 'Villa',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        color: ThemeColors().black),
+                                  ),
+                                  TextSpan(
+                                    text: ' (232)',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w500,
+                                        color: ThemeColors().orange),
+                                  )
+                                ])),
+                            CtmTextButton(
+                              text: 'View all',
+                              fontcolor: ThemeColors().orange,
+                              fontSize: Sizes.s12.sp,
+                              fontWeight: FontWeight.w700,
+                            )
+                          ],
+                        ),
+                      ),
+                      ScreenUtil().setVerticalSpacing(14),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 30),
+                        child: Container(
+                          height: Sizes.s103.h,
+                          child: SizedBox(
+                            height: Sizes.s103.h,
+                            child: GridView.count(
+                              scrollDirection: Axis.horizontal,
+                              crossAxisCount: 1,
+                              childAspectRatio:0.4,
+                              mainAxisSpacing: 15,
+                              children: List.generate(5, (index) {
+                                return 
+                                Container(
+                        height: Sizes.s103.h,
+                        width: Sizes.s280.w,
+                        decoration: BoxDecoration(
+                            color: ThemeColors().white,
+                            borderRadius: BorderRadius.circular(Sizes.s15.r)),
+                        child: Row(
+                          children: [
+                            ScreenUtil().setHorizontalSpacing(10),
+                            Stack(
+                              children: [
+                                Container(
+                                  height: Sizes.s83.w,
+                                  width: Sizes.s83.w,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.all(
+                                          Radius.circular(Sizes.s15.r)),
+                                      image: const DecorationImage(
+                                          image: AssetImage(
+                                            'assets/images/image/image12.png',
+                                          ),
+                                          fit: BoxFit.cover)),
+                                ),
+                                Positioned(
+                                  top: 11,
+                                  right: 11,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(Sizes.s5.r),
+                                        color: ThemeColors()
+                                            .white
+                                            .withOpacity(0.5)),
+                                    height: Sizes.s19.h,
+                                    width: Sizes.s19.w,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(6.0),
+                                      child: Icon(
+                                        CupertinoIcons.bookmark_fill,
+                                        size: 10,
+                                        color: ThemeColors().white,
+                                      ),
+                                    ),
+                                  ),
+                                )
+                              ],
+                            ),
+                            ScreenUtil().setHorizontalSpacing(10),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                ScreenUtil().setVerticalSpacing(15),
+                                Expanded(
+                                  child: Text(
+                                    'Studio Apartment',
+                                    maxLines: 2,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: Sizes.s13.sp),
+                                  ),
+                                ),
+                                Row(
+                                  // mainAxisAlignment:
+                                  //     MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Column(
+                                      children: [
+                                        SvgPicture.asset(
+                                          AppAssets.bedIcon,
+                                          // color: ThemeColors().textColor,
+                                        ),
+                                        RichText(
+                                            text: TextSpan(
+                                                style: TextStyle(
+                                                    color: ThemeColors()
+                                                        .textColor),
+                                                children: const [
+                                              TextSpan(text: '3'),
+                                              TextSpan(text: ' Bed'),
+                                            ]))
+                                      ],
+                                    ),
+                                    ScreenUtil().setHorizontalSpacing(10),
+                                    Column(
+                                      children: [
+                                        SvgPicture.asset(
+                                          AppAssets.bathIcon,
+                                          color: ThemeColors().textColor,
+                                        ),
+                                        RichText(
+                                            text: TextSpan(
+                                                style: TextStyle(
+                                                    color: ThemeColors()
+                                                        .textColor),
+                                                children: const [
+                                              TextSpan(text: '2'),
+                                              TextSpan(text: ' Bath'),
+                                            ]))
+                                      ],
+                                    ),
+                                    ScreenUtil().setHorizontalSpacing(10),
+                                    Column(
+                                      children: [
+                                        SvgPicture.asset(
+                                          AppAssets.carIcon,
+                                          color: ThemeColors().textColor,
+                                        ),
+                                        RichText(
+                                            text: TextSpan(
+                                                style: TextStyle(
+                                                    color: ThemeColors()
+                                                        .textColor),
+                                                children: const [
+                                              TextSpan(text: '2'),
+                                              TextSpan(text: ' Parking'),
+                                            ]))
+                                      ],
+                                    )
+                                  ],
+                                ),
+                                ScreenUtil().setVerticalSpacing(10),
+                                Expanded(
+                                  child: Text(
+                                    '\$24,532',
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.w700,
+                                        fontSize: Sizes.s14.sp,
+                                        color: ThemeColors().orange),
+                                  ),
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      );
+                      }),
+                            ),
+                          ),
+                        ),
+                      ),
+                      
                       // Container(
-                      //   height: Sizes.s265.h,
-                      //   child: GridView.builder(
-                      //     gridDelegate:
-                      //         const SliverGridDelegateWithFixedCrossAxisCount(
-                      //       crossAxisCount: 1,
-                      //       mainAxisSpacing: 15.0,
-                      //     ),
-                      //     itemCount: 5,
-                      //     scrollDirection: Axis.horizontal,
-                      //     itemBuilder: (context, index) {
-                      //       return Container(
-                      //         decoration: BoxDecoration(
-                      //             color: ThemeColors().white,
-                      //             borderRadius:
-                      //                 BorderRadius.circular(Sizes.s15.r)),
-                      //         height: Sizes.s260.h,
-                      //         width: Sizes.s170.w,
-                      //         child: Padding(
-                      //           padding: const EdgeInsets.all(10.0),
-                      //           child: Column(
-                      //             children: [
-                      //               ClipRRect(
-                      //                 borderRadius:
-                      //                     BorderRadius.circular(Sizes.s15.r),
-                      //                 child: Stack(
-                      //                   children: [
-                      //                     Container(
-                      //                       height: Sizes.s157.h,
-                      //                       width: Sizes.s157.w,
-                      //                       decoration: const BoxDecoration(
-                      //                           image: DecorationImage(
-                      //                               image: AssetImage(
-                      //                                 'assets/images/image/download3.jpeg',
-                      //                               ),
-                      //                               fit: BoxFit.cover)),
+                      //   height: Sizes.s108.h,
+                      //   width: Sizes.s280.w,
+                      //   decoration: BoxDecoration(
+                      //       color: ThemeColors().white,
+                      //       borderRadius: BorderRadius.circular(Sizes.s15.r)),
+                      //   child: Row(
+                      //     children: [
+                      //       ScreenUtil().setHorizontalSpacing(10),
+                      //       Stack(
+                      //         children: [
+                      //           Container(
+                      //             height: Sizes.s83.w,
+                      //             width: Sizes.s83.w,
+                      //             decoration: BoxDecoration(
+                      //                 borderRadius: BorderRadius.all(
+                      //                     Radius.circular(Sizes.s15.r)),
+                      //                 image: const DecorationImage(
+                      //                     image: AssetImage(
+                      //                       'assets/images/image/image12.png',
                       //                     ),
-                      //                     Positioned(
-                      //                       top: 11,
-                      //                       right: 11,
-                      //                       child: Container(
-                      //                         decoration: BoxDecoration(
-                      //                             borderRadius:
-                      //                                 BorderRadius.circular(
-                      //                                     Sizes.s5.r),
-                      //                             color: ThemeColors()
-                      //                                 .white
-                      //                                 .withOpacity(0.5)),
-                      //                         height: Sizes.s31.h,
-                      //                         width: Sizes.s31.w,
-                      //                         child: Padding(
-                      //                           padding:
-                      //                               const EdgeInsets.all(6.0),
-                      //                           child: Icon(
-                      //                             CupertinoIcons
-                      //                                 .bookmark_fill,
-                      //                             color: ThemeColors().white,
-                      //                           ),
-                      //                         ),
-                      //                       ),
-                      //                     )
-                      //                   ],
+                      //                     fit: BoxFit.cover)),
+                      //           ),
+                      //           Positioned(
+                      //             top: 11,
+                      //             right: 11,
+                      //             child: Container(
+                      //               decoration: BoxDecoration(
+                      //                   borderRadius:
+                      //                       BorderRadius.circular(Sizes.s5.r),
+                      //                   color: ThemeColors()
+                      //                       .white
+                      //                       .withOpacity(0.5)),
+                      //               height: Sizes.s19.h,
+                      //               width: Sizes.s19.w,
+                      //               child: Padding(
+                      //                 padding: const EdgeInsets.all(6.0),
+                      //                 child: Icon(
+                      //                   CupertinoIcons.bookmark_fill,
+                      //                   size: 10,
+                      //                   color: ThemeColors().white,
                       //                 ),
                       //               ),
-                      //               ScreenUtil()
-                      //                   .setVerticalSpacing(Sizes.s12.h),
-                      //               Row(
+                      //             ),
+                      //           )
+                      //         ],
+                      //       ),
+                      //       ScreenUtil().setHorizontalSpacing(10),
+                      //       Column(
+                      //         crossAxisAlignment: CrossAxisAlignment.start,
+                      //         children: [
+                      //           ScreenUtil().setVerticalSpacing(15),
+                      //           Expanded(
+                      //             child: Text(
+                      //               'Studio Apartment',
+                      //               maxLines: 2,
+                      //               overflow: TextOverflow.ellipsis,
+                      //               style: TextStyle(
+                      //                   fontWeight: FontWeight.w700,
+                      //                   fontSize: Sizes.s13.sp),
+                      //             ),
+                      //           ),
+                      //           Row(
+                      //             // mainAxisAlignment:
+                      //             //     MainAxisAlignment.spaceBetween,
+                      //             children: [
+                      //               Column(
                       //                 children: [
-                      //                   Flexible(
-                      //                     child: Text(
-                      //                       'Studio Apartment',
-                      //                       style: TextStyle(
-                      //                           fontWeight: FontWeight.w700,
-                      //                           fontSize: Sizes.s13.sp),
-                      //                     ),
+                      //                   SvgPicture.asset(
+                      //                     AppAssets.bedIcon,
+                      //                     // color: ThemeColors().textColor,
                       //                   ),
-                      //                   ScreenUtil()
-                      //                       .setHorizontalSpacing(Sizes.s2.w),
-                      //                   Text(
-                      //                     '\$24,532',
-                      //                     style: TextStyle(
-                      //                         fontWeight: FontWeight.w700,
-                      //                         fontSize: Sizes.s17.sp,
-                      //                         color: ThemeColors().orange),
-                      //                   )
+                      //                   RichText(
+                      //                       text: TextSpan(
+                      //                           style: TextStyle(
+                      //                               color: ThemeColors()
+                      //                                   .textColor),
+                      //                           children: const [
+                      //                         TextSpan(text: '3'),
+                      //                         TextSpan(text: ' Bed'),
+                      //                       ]))
                       //                 ],
                       //               ),
-                      //               ScreenUtil().setVerticalSpacing(18.0),
-                      //               Row(
-                      //                 mainAxisAlignment:
-                      //                     MainAxisAlignment.spaceBetween,
+                      //               ScreenUtil().setHorizontalSpacing(10),
+                      //               Column(
                       //                 children: [
-                      //                   Column(
-                      //                     children: [
-                      //                       SvgPicture.asset(
-                      //                         AppAssets.bedIcon,
-                      //                         // color: ThemeColors().textColor,
-                      //                       ),
-                      //                       RichText(
-                      //                           text: TextSpan(
-                      //                               style: TextStyle(
-                      //                                   color: ThemeColors()
-                      //                                       .textColor),
-                      //                               children: const [
-                      //                             TextSpan(text: '3'),
-                      //                             TextSpan(text: ' Bed'),
-                      //                           ]))
-                      //                     ],
+                      //                   SvgPicture.asset(
+                      //                     AppAssets.bathIcon,
+                      //                     color: ThemeColors().textColor,
                       //                   ),
-                      //                   Column(
-                      //                     children: [
-                      //                       SvgPicture.asset(
-                      //                         AppAssets.bathIcon,
-                      //                         color: ThemeColors().textColor,
-                      //                       ),
-                      //                       RichText(
-                      //                           text: TextSpan(
-                      //                               style: TextStyle(
-                      //                                   color: ThemeColors()
-                      //                                       .textColor),
-                      //                               children: [
-                      //                             const TextSpan(text: '2'),
-                      //                             const TextSpan(
-                      //                                 text: ' Bath'),
-                      //                           ]))
-                      //                     ],
+                      //                   RichText(
+                      //                       text: TextSpan(
+                      //                           style: TextStyle(
+                      //                               color: ThemeColors()
+                      //                                   .textColor),
+                      //                           children: const [
+                      //                         TextSpan(text: '2'),
+                      //                         TextSpan(text: ' Bath'),
+                      //                       ]))
+                      //                 ],
+                      //               ),
+                      //               ScreenUtil().setHorizontalSpacing(10),
+                      //               Column(
+                      //                 children: [
+                      //                   SvgPicture.asset(
+                      //                     AppAssets.carIcon,
+                      //                     color: ThemeColors().textColor,
                       //                   ),
-                      //                   Column(
-                      //                     children: [
-                      //                       SvgPicture.asset(
-                      //                         AppAssets.carIcon,
-                      //                         color: ThemeColors().textColor,
-                      //                       ),
-                      //                       RichText(
-                      //                           text: TextSpan(
-                      //                               style: TextStyle(
-                      //                                   color: ThemeColors()
-                      //                                       .textColor),
-                      //                               children: [
-                      //                             const TextSpan(text: '2'),
-                      //                             const TextSpan(
-                      //                                 text: ' Parking'),
-                      //                           ]))
-                      //                     ],
-                      //                   )
+                      //                   RichText(
+                      //                       text: TextSpan(
+                      //                           style: TextStyle(
+                      //                               color: ThemeColors()
+                      //                                   .textColor),
+                      //                           children: const [
+                      //                         TextSpan(text: '2'),
+                      //                         TextSpan(text: ' Parking'),
+                      //                       ]))
                       //                 ],
                       //               )
                       //             ],
                       //           ),
-                      //         ),
-                      //       );
-                      //     },
+                      //           ScreenUtil().setVerticalSpacing(10),
+                      //           Expanded(
+                      //             child: Text(
+                      //               '\$24,532',
+                      //               maxLines: 1,
+                      //               overflow: TextOverflow.ellipsis,
+                      //               style: TextStyle(
+                      //                   fontWeight: FontWeight.w700,
+                      //                   fontSize: Sizes.s14.sp,
+                      //                   color: ThemeColors().orange),
+                      //             ),
+                      //           )
+                      //         ],
+                      //       )
+                      //     ],
                       //   ),
                       // ),
-                      // ScreenUtil().setVerticalSpacing(Sizes.s24.h),
+                      ScreenUtil().setVerticalSpacing(50),
                     ],
                   )
-                ],
+                  ],
               ),
             ),
           ),
