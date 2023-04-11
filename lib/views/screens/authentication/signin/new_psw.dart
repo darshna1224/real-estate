@@ -129,7 +129,7 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ForgotPswMobile()));
+                              builder: (context) => const ForgotPswMobile()));
                     }),
                 SizedBox(
                   height: Sizes.s24.h,

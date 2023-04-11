@@ -8,7 +8,6 @@ import 'package:real_estate/core/contants/svgimage.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/contants/textformfield.dart';
 import 'package:real_estate/core/utils/colors.dart';
-import 'package:real_estate/views/screens/authentication/signup/psw_otp.dart';
 
 class SellPersonContact extends StatefulWidget {
   const SellPersonContact({super.key});
@@ -23,7 +22,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 22.0),
+          padding: const EdgeInsets.symmetric(horizontal: 22.0),
           child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,

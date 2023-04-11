@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_utils/flutter_utils.dart';
 import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/elevatedbutton.dart';
