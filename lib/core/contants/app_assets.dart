@@ -33,4 +33,6 @@ class AppAssets {
   static const String bFillSavedIcon = 'assets/images/icons/BFillSavedIcon.svg';
   static const String bProfileIcon = 'assets/images/icons/BProfileIcon.svg';
   static const String bFillProfileIcon = 'assets/images/icons/BFillProfileIcon.svg';
+  static const String backArrow = 'assets/images/icons/backArrow.svg';
+  static const String bookMarkIcon = 'assets/images/icons/bookmarkIcon.svg';
 }

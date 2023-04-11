@@ -38,7 +38,7 @@ class _BottomBarState extends State<BottomBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBody: true,
+      extendBody: false,
       body: pages[currentIndex],
       floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked,
 
@@ -48,8 +48,8 @@ class _BottomBarState extends State<BottomBar> {
         child: Icon( Icons.add),
       ),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.white ,
-        height: Sizes.s77.h,
+        color: ThemeColors().white,
+        height: Sizes.s70.h,
         notchMargin:5 ,
         shape: CircularNotchedRectangle(),
         child: Row(
@@ -64,7 +64,7 @@ class _BottomBarState extends State<BottomBar> {
                
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 19,bottom: 12,left: 15),
+                padding: const EdgeInsets.only(top: 27,bottom: 0,left: 15),
                 child: Column(
                   children: [
                     
@@ -84,7 +84,7 @@ class _BottomBarState extends State<BottomBar> {
                
               },
                child: Padding(
-                 padding: const EdgeInsets.only(top: 30,bottom: 0,),
+                 padding: const EdgeInsets.only(top: 26,bottom: 0,),
                  child: Column(
                   children: [
                    SvgPicture.asset(currentIndex == 1 ? AppAssets.bFillNotificationIcon : AppAssets.bNotificationIcon),
@@ -123,7 +123,7 @@ class _BottomBarState extends State<BottomBar> {
                
               },
                child: Padding(
-                 padding: const EdgeInsets.only(top: 19,bottom: 12,right: 10),
+                 padding: const EdgeInsets.only(top: 28,bottom: 0,right: 10),
                  child: Column(
                   children: [
                     SvgPicture.asset(currentIndex == 2 ? AppAssets.bFillSavedIcon : AppAssets.bSavedIcon),
@@ -142,7 +142,7 @@ class _BottomBarState extends State<BottomBar> {
                
               },
                child: Padding(
-                 padding: const EdgeInsets.only(top: 19,bottom: 12,right: 15),
+                 padding: const EdgeInsets.only(top: 28,bottom: 12,right: 15),
                  child: Column(
                   children: [
                    SvgPicture.asset(currentIndex == 3 ? AppAssets.bFillProfileIcon : AppAssets.bProfileIcon),

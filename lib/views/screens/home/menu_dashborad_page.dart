@@ -194,6 +194,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           color: const Color(0xffF5F5F5),
           child: Scaffold(
             backgroundColor: const Color(0xffF5F5F5),
+   
             body: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
