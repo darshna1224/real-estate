@@ -25,4 +25,14 @@ class AppAssets {
   static const String bathIcon = 'assets/images/icons/bathIcon.svg';
   static const String carIcon = 'assets/images/icons/carIcon.svg';
   static const String bannerImage = 'assets/images/image/banner.png';
+  static const String bHomeIcon = 'assets/images/icons/BHomeIcon.svg';
+  static const String bFillHomeIcon = 'assets/images/icons/BFillHomeIcon.svg';
+  static const String bNotificationIcon = 'assets/images/icons/BNotificationIcon.svg';
+  static const String bFillNotificationIcon = 'assets/images/icons/BFillNotificationIcon.svg';
+  static const String bSavedIcon = 'assets/images/icons/BSavedIcon.svg';
+  static const String bFillSavedIcon = 'assets/images/icons/BFillSavedIcon.svg';
+  static const String bProfileIcon = 'assets/images/icons/BProfileIcon.svg';
+  static const String bFillProfileIcon = 'assets/images/icons/BFillProfileIcon.svg';
+  static const String backArrow = 'assets/images/icons/backArrow.svg';
+  static const String bookMarkIcon = 'assets/images/icons/bookmarkIcon.svg';
 }

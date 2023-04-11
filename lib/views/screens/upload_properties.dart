@@ -10,7 +10,15 @@ class UploadPropertyScreen extends StatefulWidget {
   State<UploadPropertyScreen> createState() => _UploadPropertyScreenState();
 }
 
-class _UploadPropertyScreenState extends State<UploadPropertyScreen> {
+class _UploadPropertyScreenState extends State<UploadPropertyScreen>
+    with SingleTickerProviderStateMixin {
+  late final TabController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = TabController(length: 2, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -30,32 +38,35 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen> {
                 fontWeight: FontWeight.w600,
                 fontSize: Sizes.s20.sp),
           ),
-          bottom: TabBar(tabs: [
-            Tab(
-              // text: 'Overview',
-              child: Text(
-                'Overview',
-                style: TextStyle(color: ThemeColors().textColor),
-              ),
-            ),
-            Tab(
-              child: Text(
-                'Location',
-                style: TextStyle(color: ThemeColors().textColor),
-              ),
-              // text: 'Location',
-            ),
-            Tab(
-              child: Text(
-                'Photos',
-                style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: Sizes.s15.sp,
-                    color: ThemeColors().textColor),
-              ),
-              // text: 'Photos',
-            )
-          ]),
+          bottom: TabBar(
+              unselectedLabelColor: ThemeColors().textColor,
+              unselectedLabelStyle: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: Sizes.s15.sp,
+                  color: ThemeColors().textColor),
+              labelStyle: TextStyle(
+                  fontWeight: FontWeight.w600,
+                  fontSize: Sizes.s15.sp,
+                  color: ThemeColors().themeColor),
+              labelColor: ThemeColors().themeColor,
+              indicatorColor: ThemeColors().transparent,
+              tabs: const [
+                Tab(
+                  child: Text(
+                    'Overview',
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Location',
+                  ),
+                ),
+                Tab(
+                  child: Text(
+                    'Photos',
+                  ),
+                )
+              ]),
         ),
         body: Column(),
       ),

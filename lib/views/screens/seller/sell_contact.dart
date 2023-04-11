@@ -115,19 +115,28 @@ class _SellPersonContactState extends State<SellPersonContact> {
 
   Widget _buildPopupDialog(BuildContext context) {
     return AlertDialog(
+
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(16.0))),
-      title: const Text('Thank you'),
+      title: const Text('Thank you', textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.w700),),
+      
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const <Widget>[
-          Text(
+        children:  <Widget>[
+          const Divider(
+            height: 1,
+            indent: 36,
+            endIndent: 36,
+          ),
+          ScreenUtil().setVerticalSpacing(12),
+          const Text(
             "Our contact person will contact you in 2-3 days.",
             textAlign: TextAlign.center,
           ),
         ],
       ),
+      
       actions: <Widget>[
         Center(
           child: Container(
