@@ -57,6 +57,7 @@ class Sizes {
   static const double s70 = 70;
   static const double s72 = 72;
   static const double s74 = 74;
+  static const double s77 = 77;
   static const double s80 = 80;
   static const double s83 = 83;
   static const double s90 = 90;
@@ -96,6 +97,7 @@ class Sizes {
   static const double s280 = 280;
   static const double s300 = 300;
   static const double s320 = 320;
+  static const double s356 = 356;
   static const double s377 = 377;
 }
 
