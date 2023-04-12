@@ -7,7 +7,7 @@ import 'package:real_estate/core/contants/svgimage.dart';
 import 'package:real_estate/core/contants/textformfield.dart';
 import 'package:real_estate/core/utils/colors.dart';
 
-import '../../home/menu_dashborad_page.dart';
+import '../../home/home_page/menu_dashborad_page.dart';
 
 class ForgotPswMobile extends StatefulWidget {
   const ForgotPswMobile({super.key});

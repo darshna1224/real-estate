@@ -8,6 +8,8 @@ import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/views/screens/home/detailapatment_sccreen.dart';
+import 'package:real_estate/views/screens/home/home_page/view_apartment_list.dart';
+import 'package:real_estate/views/screens/home/home_page/view_property_list.dart';
 
 class MenuDashBoardPage extends StatefulWidget {
   const MenuDashBoardPage({Key? key}) : super(key: key);
@@ -390,6 +392,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               fontcolor: ThemeColors().orange,
                               fontSize: Sizes.s12.sp,
                               fontWeight: FontWeight.w700,
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ViewApartmentList(),
+                                    ));
+                              },
                             )
                           ],
                         ),
@@ -610,6 +619,13 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               fontcolor: ThemeColors().orange,
                               fontSize: Sizes.s12.sp,
                               fontWeight: FontWeight.w700,
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => ViewPropertyList(),
+                                    ));
+                              },
                             )
                           ],
                         ),
@@ -789,7 +805,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                         ),
                       ),
-                      ScreenUtil().setVerticalSpacing(50),
+                      ScreenUtil().setVerticalSpacing(25.0),
                     ],
                   )
                 ],

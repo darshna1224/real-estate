@@ -4,9 +4,9 @@ import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/views/screens/authentication/signin/login_page.dart';
 import 'package:real_estate/views/screens/authentication/signup/signup_page.dart';
-import 'package:real_estate/views/screens/home/menu_dashborad_page.dart';
-import 'package:real_estate/views/screens/notification_screen.dart';
+import 'package:real_estate/views/screens/home/home_page/menu_dashborad_page.dart';
 import 'package:real_estate/views/screens/seller/sell_contact.dart';
+import 'package:real_estate/views/screens/upload_property/notification_screen.dart';
 
 class BottomNaviBar extends StatefulWidget {
   const BottomNaviBar({Key? key}) : super(key: key);

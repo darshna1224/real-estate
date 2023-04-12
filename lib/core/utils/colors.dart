@@ -11,4 +11,7 @@ class ThemeColors {
   Color themeColor = const Color(0xff9FD7D0);
   Color searchBg = const Color(0xffF0F0F0);
   Color price = const Color(0xff949494);
+  Color searchBar = const Color(0xffF9F9F9);
+  Color bgColor = const Color(0xffF5F5F5);
+  Color grey = Colors.grey;
 }
