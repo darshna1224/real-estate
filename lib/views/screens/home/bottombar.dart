@@ -8,8 +8,9 @@ import 'package:real_estate/core/utils/colors.dart';
 
 import 'package:real_estate/views/screens/authentication/signin/new_psw.dart';
 import 'package:real_estate/views/screens/authentication/signup/signup_page.dart';
-import 'package:real_estate/views/screens/home/menu_dashborad_page.dart';
+import 'package:real_estate/views/screens/home/home_page/menu_dashborad_page.dart';
 import 'package:real_estate/views/screens/notification/notification_screen.dart';
+import 'package:real_estate/views/screens/saved/saved_tab.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -20,10 +21,10 @@ class BottomBar extends StatefulWidget {
 
 class _BottomBarState extends State<BottomBar> {
   List pages = [
-    MenuDashBoardPage(),
-    NotificationScreen(),
-    ForgotPswNew(),
-    SignupScreen(),
+    const MenuDashBoardPage(),
+    const NotificationScreen(),
+    const SavedScreen(),
+    const SignupScreen(),
   ];
 
   int currentIndex = 0;
@@ -45,13 +46,13 @@ class _BottomBarState extends State<BottomBar> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: ThemeColors().themeColor,
         onPressed: () {},
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       bottomNavigationBar: BottomAppBar(
         color: ThemeColors().white,
         height: Sizes.s70.h,
         notchMargin: 5,
-        shape: CircularNotchedRectangle(),
+        shape: const CircularNotchedRectangle(),
         child: Row(
           // mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
