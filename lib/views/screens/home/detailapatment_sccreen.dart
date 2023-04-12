@@ -279,19 +279,21 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                         )
                       ],
                     ),
-                    CtmElevatedButton(
-                      width: Sizes.s160.w,
-                      txtColor: ThemeColors().white,
-                      fontSize: Sizes.s19.sp,
-                      fontWeight: FontWeight.w700,
-                      text: 'Call US',
-                      onPressed: () {
-                        showDialog(
-                          context: context,
-                          builder: (BuildContext context) =>
-                              _buildPopupDialog(context),
-                        );
-                      },
+                    Expanded(
+                      child: CtmElevatedButton(
+                        width: Sizes.s160.w,
+                        txtColor: ThemeColors().white,
+                        fontSize: Sizes.s19.sp,
+                        fontWeight: FontWeight.w700,
+                        text: 'Call US',
+                        onPressed: () {
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) =>
+                                _buildPopupDialog(context),
+                          );
+                        },
+                      ),
                     )
                   ],
                 ),
