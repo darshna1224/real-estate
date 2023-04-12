@@ -9,7 +9,6 @@ import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/views/screens/home/detailapatment_sccreen.dart';
 
-
 class MenuDashBoardPage extends StatefulWidget {
   const MenuDashBoardPage({Key? key}) : super(key: key);
 
@@ -194,7 +193,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           color: const Color(0xffF5F5F5),
           child: Scaffold(
             backgroundColor: const Color(0xffF5F5F5),
-   
             body: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -216,7 +214,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               }
                               openDrawer = !openDrawer;
                             });
-                    
                           },
                           icon: const Icon(
                               CupertinoIcons.line_horizontal_3_decrease),
@@ -412,7 +409,12 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               children: List.generate(5, (index) {
                                 return GestureDetector(
                                   onTap: () {
-                                    Navigator.push(context, MaterialPageRoute(builder: (context) => const DetailApartmentScreen(),));
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              const DetailApartmentScreen(),
+                                        ));
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
@@ -433,12 +435,16 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                 Container(
                                                   height: Sizes.s157.w,
                                                   width: Sizes.s157.w,
-                                                  decoration: const BoxDecoration(
-                                                      image: DecorationImage(
-                                                          image: AssetImage(
-                                                            'assets/images/image/download3.jpeg',
-                                                          ),
-                                                          fit: BoxFit.cover)),
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                          image:
+                                                              DecorationImage(
+                                                                  image:
+                                                                      AssetImage(
+                                                                    'assets/images/image/download3.jpeg',
+                                                                  ),
+                                                                  fit: BoxFit
+                                                                      .cover)),
                                                 ),
                                                 Positioned(
                                                   top: 11,
@@ -446,8 +452,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   child: Container(
                                                     decoration: BoxDecoration(
                                                         borderRadius:
-                                                            BorderRadius.circular(
-                                                                Sizes.s5.r),
+                                                            BorderRadius
+                                                                .circular(
+                                                                    Sizes.s5.r),
                                                         color: ThemeColors()
                                                             .white
                                                             .withOpacity(0.5)),
@@ -478,9 +485,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                 child: Text(
                                                   'Studio Apartment',
                                                   maxLines: 2,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                   style: TextStyle(
-                                                      fontWeight: FontWeight.w700,
+                                                      fontWeight:
+                                                          FontWeight.w700,
                                                       fontSize: Sizes.s13.sp),
                                                 ),
                                               ),
@@ -490,9 +499,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                 child: Text(
                                                   '\$24,532',
                                                   maxLines: 1,
-                                                  overflow: TextOverflow.ellipsis,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
                                                   style: TextStyle(
-                                                      fontWeight: FontWeight.w700,
+                                                      fontWeight:
+                                                          FontWeight.w700,
                                                       fontSize: Sizes.s14.sp,
                                                       color:
                                                           ThemeColors().orange),
@@ -605,7 +616,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       ),
                       ScreenUtil().setVerticalSpacing(14),
                       Padding(
-                        padding:  EdgeInsets.only(left: 30),
+                        padding: EdgeInsets.only(left: 30),
                         child: SizedBox(
                           height: Sizes.s103.h,
                           child: SizedBox(
@@ -617,9 +628,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               mainAxisSpacing: 15,
                               children: List.generate(5, (index) {
                                 return GestureDetector(
-                                  onTap: () {
-                                   
-                                  },
+                                  onTap: () {},
                                   child: Container(
                                     height: Sizes.s103.h,
                                     width: Sizes.s280.w,
@@ -636,9 +645,10 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                               height: Sizes.s83.w,
                                               width: Sizes.s83.w,
                                               decoration: BoxDecoration(
-                                                  borderRadius: BorderRadius.all(
-                                                      Radius.circular(
-                                                          Sizes.s15.r)),
+                                                  borderRadius:
+                                                      BorderRadius.all(
+                                                          Radius.circular(
+                                                              Sizes.s15.r)),
                                                   image: const DecorationImage(
                                                       image: AssetImage(
                                                         'assets/images/image/image12.png',
@@ -662,7 +672,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   padding:
                                                       const EdgeInsets.all(6.0),
                                                   child: Icon(
-                                                    CupertinoIcons.bookmark_fill,
+                                                    CupertinoIcons
+                                                        .bookmark_fill,
                                                     size: 10,
                                                     color: ThemeColors().white,
                                                   ),
@@ -695,7 +706,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   children: [
                                                     SvgPicture.asset(
                                                       AppAssets.bedIcon,
-                                                      // color: ThemeColors().textColor,
+                                                      // color: ThemeColors()
+                                                      //     .textColor,
                                                     ),
                                                     RichText(
                                                         text: TextSpan(
@@ -704,7 +716,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                                     .textColor),
                                                             children: const [
                                                           TextSpan(text: '3'),
-                                                          TextSpan(text: ' Bed'),
+                                                          TextSpan(
+                                                              text: ' Bed'),
                                                         ]))
                                                   ],
                                                 ),
@@ -714,8 +727,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   children: [
                                                     SvgPicture.asset(
                                                       AppAssets.bathIcon,
-                                                      color:
-                                                          ThemeColors().textColor,
+                                                      color: ThemeColors()
+                                                          .textColor,
                                                     ),
                                                     RichText(
                                                         text: TextSpan(
@@ -724,7 +737,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                                     .textColor),
                                                             children: const [
                                                           TextSpan(text: '2'),
-                                                          TextSpan(text: ' Bath'),
+                                                          TextSpan(
+                                                              text: ' Bath'),
                                                         ]))
                                                   ],
                                                 ),
@@ -734,8 +748,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   children: [
                                                     SvgPicture.asset(
                                                       AppAssets.carIcon,
-                                                      color:
-                                                          ThemeColors().textColor,
+                                                      color: ThemeColors()
+                                                          .textColor,
                                                     ),
                                                     RichText(
                                                         text: TextSpan(
@@ -760,7 +774,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.w700,
                                                     fontSize: Sizes.s14.sp,
-                                                    color: ThemeColors().orange),
+                                                    color:
+                                                        ThemeColors().orange),
                                               ),
                                             )
                                           ],
@@ -774,8 +789,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                         ),
                       ),
-
-                       ScreenUtil().setVerticalSpacing(50),
+                      ScreenUtil().setVerticalSpacing(50),
                     ],
                   )
                 ],
