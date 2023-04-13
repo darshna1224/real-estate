@@ -13,6 +13,8 @@ class CtmTextFormField extends StatelessWidget {
   final bool? autofocus;
   final FocusNode? focusNode;
   final TextInputType? keyboardType;
+  final double? hintFontSize;
+  final FontWeight? hintFontWeight;
 
   const CtmTextFormField({
     super.key,
@@ -26,6 +28,8 @@ class CtmTextFormField extends StatelessWidget {
     this.keyboardType,
     this.labelText,
     this.hintText,
+    this.hintFontSize,
+    this.hintFontWeight,
   });
 
   @override
@@ -44,7 +48,10 @@ class CtmTextFormField extends StatelessWidget {
         labelText: labelText,
         labelStyle: TextStyle(color: labelTextColor, fontSize: Sizes.s15.sp),
         hintText: hintText,
-        hintStyle: TextStyle(color: hintTextColor, fontSize: Sizes.s15.sp),
+        hintStyle: TextStyle(
+            color: hintTextColor,
+            fontWeight: hintFontWeight,
+            fontSize: hintFontSize ?? Sizes.s15.sp),
       ),
     );
   }

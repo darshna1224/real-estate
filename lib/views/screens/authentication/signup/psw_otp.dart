@@ -107,6 +107,7 @@ class _OtpScreenState extends State<OtpScreen> {
             ),
             const Spacer(),
             CtmElevatedButton(
+              borderColor: ThemeColors().transparent,
               margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 20),
               text: 'Verify',
               fontSize: Sizes.s20.sp,

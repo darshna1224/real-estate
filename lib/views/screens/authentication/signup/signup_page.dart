@@ -120,6 +120,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 CtmElevatedButton(
                     fontWeight: FontWeight.w700,
+                    borderColor: ThemeColors().transparent,
                     fontSize: Sizes.s20.sp,
                     width: MediaQuery.of(context).size.width,
                     btnColor: ThemeColors().themeColor,

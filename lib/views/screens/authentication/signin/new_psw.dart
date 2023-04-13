@@ -119,6 +119,7 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                   height: Sizes.s80.h,
                 ),
                 CtmElevatedButton(
+                    borderColor: ThemeColors().transparent,
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
                     width: MediaQuery.of(context).size.width,

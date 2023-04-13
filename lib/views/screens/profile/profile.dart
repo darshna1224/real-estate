@@ -54,23 +54,56 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
                 ),
                 ScreenUtil().setVerticalSpacing(11.0),
-                CtmElevatedButton(
-                    txtColor: ThemeColors().white,
-                    text: 'Edit profile',
-                    height: Sizes.s27.h,
-                    fontSize: 13,
-                    fontWeight: FontWeight.w600,
-                    width: Sizes.s109.w,
-                    radius: Sizes.s6.r,
-                    icon: Icons.edit,
-                    iconSize: 12,
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => EditProfileScreen(),
-                          ));
-                    }),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(Sizes.s6.r)),
+                      backgroundColor: ThemeColors().themeColor,
+                      fixedSize: Size(Sizes.s109.w, Sizes.s27.h)),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => EditProfileScreen(),
+                        ));
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Edit profile',
+                        style: TextStyle(
+                            color: ThemeColors().white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 13),
+                      ),
+                      ScreenUtil().setHorizontalSpacing(3),
+                      Icon(
+                        Icons.edit,
+                        // color: iconColor,
+                        size: 12,
+                      )
+                    ],
+                  ),
+                ),
+                // CtmElevatedButton(
+                //     borderColor: ThemeColors().transparent,
+                //     txtColor: ThemeColors().white,
+                //     text: 'Edit profile',
+                //     height: Sizes.s27.h,
+                //     fontSize: 13,
+                //     fontWeight: FontWeight.w600,
+                //     width: Sizes.s109.w,
+                //     radius: Sizes.s6.r,
+                //     icon: Icons.edit,
+                //     iconSize: 12,
+                //     onPressed: () {
+                //       Navigator.push(
+                //           context,
+                //           MaterialPageRoute(
+                //             builder: (context) => EditProfileScreen(),
+                //           ));
+                //     }),
                 ScreenUtil().setVerticalSpacing(30),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,

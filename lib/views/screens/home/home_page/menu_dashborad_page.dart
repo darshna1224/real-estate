@@ -8,6 +8,7 @@ import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/views/screens/home/detailapatment_sccreen.dart';
+import 'package:real_estate/views/screens/home/filter.dart';
 import 'package:real_estate/views/screens/home/home_page/view_apartment_list.dart';
 import 'package:real_estate/views/screens/home/home_page/view_property_list.dart';
 
@@ -296,16 +297,25 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           ),
                         ),
                         ScreenUtil().setHorizontalSpacing(18),
-                        Container(
-                          height: Sizes.s48.h,
-                          width: Sizes.s48.w,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(15),
-                              color: ThemeColors().orange),
-                          child: Padding(
-                            padding: const EdgeInsets.all(16.0),
-                            child: SvgPicture.asset(
-                              AppAssets.filterIcon,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FilterScreen(),
+                                ));
+                          },
+                          child: Container(
+                            height: Sizes.s48.h,
+                            width: Sizes.s48.w,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(15),
+                                color: ThemeColors().orange),
+                            child: Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: SvgPicture.asset(
+                                AppAssets.filterIcon,
+                              ),
                             ),
                           ),
                         ),

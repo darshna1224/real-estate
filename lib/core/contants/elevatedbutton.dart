@@ -5,7 +5,7 @@ import 'package:real_estate/core/utils/colors.dart';
 class CtmElevatedButton extends StatelessWidget {
   final FontWeight? fontWeight;
   final String text;
-  final Color? borderColor;
+  final Color borderColor;
   final Color? btnColor;
   final Color txtColor;
   final double? fontSize;
@@ -17,12 +17,13 @@ class CtmElevatedButton extends StatelessWidget {
   final IconData? icon;
   final Color? iconColor;
   final double? iconSize;
+  final double? elevation;
 
   const CtmElevatedButton({
     this.radius,
     this.fontSize,
     this.fontWeight,
-    this.borderColor,
+    required this.borderColor,
     this.btnColor,
     required this.txtColor,
     required this.text,
@@ -33,6 +34,7 @@ class CtmElevatedButton extends StatelessWidget {
     this.icon,
     this.iconColor,
     this.iconSize,
+    this.elevation,
     Key? key,
   }) : super(key: key);
 
@@ -43,26 +45,20 @@ class CtmElevatedButton extends StatelessWidget {
       margin: margin,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
+            elevation: elevation,
             shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  width: 2,
+                  color: borderColor,
+                ),
                 borderRadius: BorderRadius.circular(radius ?? 15)),
             backgroundColor: btnColor ?? ThemeColors().themeColor,
             fixedSize: Size(width ?? size.width, height ?? 63)),
         onPressed: onPressed,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              text,
-              style: TextStyle(
-                  color: txtColor, fontWeight: fontWeight, fontSize: fontSize),
-            ),
-            ScreenUtil().setHorizontalSpacing(3),
-            Icon(
-              icon,
-              color: iconColor,
-              size: iconSize,
-            )
-          ],
+        child: Text(
+          text,
+          style: TextStyle(
+              color: txtColor, fontWeight: fontWeight, fontSize: fontSize),
         ),
       ),
     );

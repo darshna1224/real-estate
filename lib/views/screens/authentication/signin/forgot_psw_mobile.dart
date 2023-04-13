@@ -72,6 +72,7 @@ class _ForgotPswMobileState extends State<ForgotPswMobile> {
                   height: Sizes.s100.h,
                 ),
                 CtmElevatedButton(
+                    borderColor: ThemeColors().transparent,
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
                     width: MediaQuery.of(context).size.width,

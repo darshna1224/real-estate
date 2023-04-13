@@ -281,6 +281,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                     ),
                     Expanded(
                       child: CtmElevatedButton(
+                        borderColor: ThemeColors().transparent,
                         width: Sizes.s160.w,
                         txtColor: ThemeColors().white,
                         fontSize: Sizes.s19.sp,

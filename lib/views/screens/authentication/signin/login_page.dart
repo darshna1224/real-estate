@@ -78,6 +78,7 @@ class _LoginPageState extends State<LoginPage> {
                     controller: _phone),
                 ScreenUtil().setVerticalSpacing(80),
                 CtmElevatedButton(
+                    borderColor: ThemeColors().transparent,
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
                     width: MediaQuery.of(context).size.width,

@@ -14,4 +14,6 @@ class ThemeColors {
   Color searchBar = const Color(0xffF9F9F9);
   Color bgColor = const Color(0xffF5F5F5);
   Color grey = Colors.grey;
+  Color textgrey = Color(0xFFA7A7A7);
+  Color blackText = Color(0xFF32312F);
 }

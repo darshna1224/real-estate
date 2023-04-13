@@ -93,6 +93,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                 ),
                 ScreenUtil().setVerticalSpacing(50),
                 CtmElevatedButton(
+                    borderColor: ThemeColors().transparent,
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
                     width: MediaQuery.of(context).size.width,
