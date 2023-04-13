@@ -68,20 +68,20 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 30.0),
                         child: Container(
-                          height: Sizes.s103.h,
-                          width: Sizes.s280.w,
+                          height: Sizes.s94.h,
+                          width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
+                              color: ThemeColors().white,
                               boxShadow: [
                                 BoxShadow(
                                     color: ThemeColors().grey.withOpacity(0.3),
                                     blurRadius: 10.0,
-                                    spreadRadius: 0.5,
-                                    offset: Offset(
-                                      5.0, // Move to right 7.0 horizontally
-                                      8.0, // Move to bottom 8.0 Vertically
+                                    spreadRadius: 2.0,
+                                    offset: const Offset(
+                                      5.0,
+                                      8.0,
                                     ))
                               ],
-                              color: ThemeColors().white,
                               borderRadius: BorderRadius.circular(Sizes.s15.r)),
                           child: Row(
                             children: [
@@ -100,8 +100,8 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                               blurRadius: 10.0,
                                               spreadRadius: 1.5,
                                               offset: Offset(
-                                                5.0,
-                                                -1.0,
+                                                5.0, // Move to right 7.0 horizontally
+                                                -1.0, // Move to bottom 8.0 Vertically
                                               ))
                                         ],
                                         borderRadius: BorderRadius.all(
@@ -136,7 +136,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                   )
                                 ],
                               ),
-                              ScreenUtil().setHorizontalSpacing(10),
+                              ScreenUtil().setHorizontalSpacing(15),
                               Expanded(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -144,11 +144,13 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                   children: [
                                     ScreenUtil().setVerticalSpacing(20.0),
                                     Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceBetween,
                                       children: [
                                         Flexible(
                                           child: Text(
                                             'Studio Apartment',
-                                            maxLines: 1,
+                                            maxLines: 2,
                                             overflow: TextOverflow.ellipsis,
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w700,
@@ -156,23 +158,28 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                           ),
                                         ),
                                         ScreenUtil().setHorizontalSpacing(8),
-                                        Text(
-                                          '\$24,532',
-                                          maxLines: 1,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.w700,
-                                              fontSize: Sizes.s14.sp,
-                                              color: ThemeColors().orange),
-                                        )
+                                        Flexible(
+                                          child: Text(
+                                            '\$24,532',
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.w700,
+                                                fontSize: Sizes.s14.sp,
+                                                color: ThemeColors().orange),
+                                          ),
+                                        ),
+                                        ScreenUtil().setHorizontalSpacing(18),
                                       ],
                                     ),
-                                    const Spacer(),
+                                    ScreenUtil().setVerticalSpacing(6),
                                     Row(
                                       // mainAxisAlignment:
                                       //     MainAxisAlignment.spaceBetween,
+                                      mainAxisSize: MainAxisSize.min,
                                       children: [
                                         Column(
+                                          mainAxisSize: MainAxisSize.min,
                                           children: [
                                             SvgPicture.asset(
                                               AppAssets.bedIcon,
@@ -182,6 +189,8 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                             RichText(
                                                 text: TextSpan(
                                                     style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                         color: ThemeColors()
                                                             .textColor),
                                                     children: const [
@@ -200,6 +209,8 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                             RichText(
                                                 text: TextSpan(
                                                     style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                         color: ThemeColors()
                                                             .textColor),
                                                     children: const [
@@ -218,6 +229,8 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                             RichText(
                                                 text: TextSpan(
                                                     style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.w500,
                                                         color: ThemeColors()
                                                             .textColor),
                                                     children: const [
@@ -228,7 +241,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                         ),
                                       ],
                                     ),
-                                    ScreenUtil().setVerticalSpacing(24.0),
+                                    // ScreenUtil().setVerticalSpacing(24.0),
                                   ],
                                 ),
                               ),

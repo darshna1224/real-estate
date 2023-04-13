@@ -167,13 +167,13 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                             AppAssets.bedIcon,
                                             height: 18,
                                             width: 21,
-                                            color:
-                                                Color.fromARGB(255, 22, 0, 0),
                                           ),
                                           ScreenUtil().setVerticalSpacing(7),
                                           RichText(
                                               text: TextSpan(
                                                   style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                       color: ThemeColors()
                                                           .textColor),
                                                   children: const [
@@ -188,12 +188,14 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                             AppAssets.bathIcon,
                                             height: 18,
                                             width: 21,
-                                            color: ThemeColors().title,
+                                            color: ThemeColors().textColor,
                                           ),
                                           ScreenUtil().setVerticalSpacing(7),
                                           RichText(
                                               text: TextSpan(
                                                   style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                       color: ThemeColors()
                                                           .textColor),
                                                   children: const [
@@ -208,12 +210,14 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                             AppAssets.carIcon,
                                             height: 18,
                                             width: 21,
-                                            color: ThemeColors().title,
+                                            color: ThemeColors().textColor,
                                           ),
                                           ScreenUtil().setVerticalSpacing(7),
                                           RichText(
                                               text: TextSpan(
                                                   style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
                                                       color: ThemeColors()
                                                           .textColor),
                                                   children: const [

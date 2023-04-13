@@ -6,7 +6,7 @@ import 'package:real_estate/core/contants/elevatedbutton.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/contants/svgimage.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
-import 'package:real_estate/core/contants/textformfield.dart';
+import 'package:real_estate/core/contants/textformfield_icon.dart';
 import 'package:real_estate/core/utils/colors.dart';
 
 class SellPersonContact extends StatefulWidget {
@@ -37,7 +37,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                   keyboardType: TextInputType.name,
                   labelTextColor: ThemeColors().textColor,
                   prefixIcon: CtmSVGImage(
@@ -59,7 +59,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                   keyboardType: TextInputType.phone,
                   labelTextColor: ThemeColors().textColor,
                   prefixIcon: CtmSVGImage(
@@ -81,7 +81,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     ),
                     ScreenUtil().setHorizontalSpacing(15),
                     Flexible(
-                      child: CtmTextFormField(
+                      child: CtmTextFormFieldWithIcon(
                         keyboardType: TextInputType.phone,
                         labelTextColor: ThemeColors().textColor,
 
@@ -115,15 +115,17 @@ class _SellPersonContactState extends State<SellPersonContact> {
 
   Widget _buildPopupDialog(BuildContext context) {
     return AlertDialog(
-
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(16.0))),
-      title: const Text('Thank you', textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.w700),),
-      
+      title: const Text(
+        'Thank you',
+        textAlign: TextAlign.center,
+        style: TextStyle(fontWeight: FontWeight.w700),
+      ),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children:  <Widget>[
+        children: <Widget>[
           const Divider(
             height: 1,
             indent: 36,
@@ -136,7 +138,6 @@ class _SellPersonContactState extends State<SellPersonContact> {
           ),
         ],
       ),
-      
       actions: <Widget>[
         Center(
           child: Container(
