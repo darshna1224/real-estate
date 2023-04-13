@@ -30,17 +30,13 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // SvgPicture.asset(
-                //   AppAssets.loginLogo,
-                //   height: Sizes.s108.h,
-                //   width: Sizes.s108.w,
-                //   fit: BoxFit.cover,
-                // ),
+                SizedBox(
+                  height: Sizes.s90.h,
+                ),
                 Image.asset(
                   AppAssets.loginLogo,
                   height: Sizes.s108.h,
                   width: Sizes.s108.w,
-                  fit: BoxFit.cover,
                 ),
                 // SvgPicture.asset(
                 //   AppAssets.loginLogo,
