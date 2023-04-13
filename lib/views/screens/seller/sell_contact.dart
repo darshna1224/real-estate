@@ -91,7 +91,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     ),
                   ],
                 ),
-                ScreenUtil().setVerticalSpacing(70),
+                ScreenUtil().setVerticalSpacing(50),
                 CtmElevatedButton(
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
@@ -105,6 +105,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                             _buildPopupDialog(context),
                       );
                     }),
+                ScreenUtil().setVerticalSpacing(30),
               ],
             ),
           ),
@@ -115,15 +116,17 @@ class _SellPersonContactState extends State<SellPersonContact> {
 
   Widget _buildPopupDialog(BuildContext context) {
     return AlertDialog(
-
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(16.0))),
-      title: const Text('Thank you', textAlign: TextAlign.center,style: TextStyle(fontWeight: FontWeight.w700),),
-      
+      title: const Text(
+        'Thank you',
+        textAlign: TextAlign.center,
+        style: TextStyle(fontWeight: FontWeight.w700),
+      ),
       content: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children:  <Widget>[
+        children: <Widget>[
           const Divider(
             height: 1,
             indent: 36,
@@ -136,7 +139,6 @@ class _SellPersonContactState extends State<SellPersonContact> {
           ),
         ],
       ),
-      
       actions: <Widget>[
         Center(
           child: Container(

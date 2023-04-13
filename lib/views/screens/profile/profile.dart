@@ -40,8 +40,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: Sizes.s100.h,
                   width: Sizes.s105.w,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(70),
-                      color: ThemeColors().themeColor),
+                      border: Border.all(color: ThemeColors().orange, width: 2),
+                      shape: BoxShape.circle,
+                      image: DecorationImage(
+                          image:
+                              AssetImage('assets/images/image/profilepic.png'),
+                          fit: BoxFit.cover)),
                 ),
                 ScreenUtil().setVerticalSpacing(15.0),
                 const Text(
