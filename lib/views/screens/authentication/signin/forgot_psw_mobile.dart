@@ -4,7 +4,7 @@ import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/elevatedbutton.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/contants/svgimage.dart';
-import 'package:real_estate/core/contants/textformfield.dart';
+import 'package:real_estate/core/contants/textformfield_icon.dart';
 import 'package:real_estate/core/utils/colors.dart';
 
 import '../../home/home_page/menu_dashborad_page.dart';
@@ -57,7 +57,7 @@ class _ForgotPswMobileState extends State<ForgotPswMobile> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                     labelTextColor: ThemeColors().textColor,
                     prefixIcon: CtmSVGImage(
                       imageheight: Sizes.s17.h,

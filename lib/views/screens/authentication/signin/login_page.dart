@@ -4,7 +4,7 @@ import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/elevatedbutton.dart';
 import 'package:real_estate/core/contants/svgimage.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
-import 'package:real_estate/core/contants/textformfield.dart';
+import 'package:real_estate/core/contants/textformfield_icon.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/views/screens/authentication/signup/psw_otp.dart';
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                     labelTextColor: ThemeColors().textColor,
                     prefixIcon: CtmSVGImage(
                       imageheight: Sizes.s17.h,

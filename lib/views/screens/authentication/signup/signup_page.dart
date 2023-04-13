@@ -4,7 +4,7 @@ import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/elevatedbutton.dart';
 import 'package:real_estate/core/contants/svgimage.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
-import 'package:real_estate/core/contants/textformfield.dart';
+import 'package:real_estate/core/contants/textformfield_icon.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/views/screens/authentication/signin/login_page.dart';
@@ -59,7 +59,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                     keyboardType: TextInputType.name,
                     labelTextColor: ThemeColors().textColor,
                     prefixIcon: CtmSVGImage(
@@ -81,7 +81,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                     keyboardType: TextInputType.emailAddress,
                     labelTextColor: ThemeColors().textColor,
                     prefixIcon: CtmSVGImage(
@@ -103,7 +103,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                     labelTextColor: ThemeColors().textColor,
                     prefixIcon: CtmSVGImage(
                       imageheight: Sizes.s17.h,

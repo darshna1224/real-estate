@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/elevatedbutton.dart';
 import 'package:real_estate/core/contants/svgimage.dart';
-import 'package:real_estate/core/contants/textformfield.dart';
+import 'package:real_estate/core/contants/textformfield_icon.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/views/screens/authentication/signin/forgot_psw_mobile.dart';
@@ -63,7 +63,7 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                     keyboardType: TextInputType.visiblePassword,
                     labelTextColor: ThemeColors().textColor,
                     suffixIcon: IconButton(
@@ -94,7 +94,7 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                     keyboardType: TextInputType.visiblePassword,
                     labelTextColor: ThemeColors().textColor,
                     suffixIcon: IconButton(

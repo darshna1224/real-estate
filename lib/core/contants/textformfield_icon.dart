@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 
-class CtmTextFormField extends StatelessWidget {
+class CtmTextFormFieldWithIcon extends StatelessWidget {
+  final Widget? prefixIcon;
+  final Widget? suffixIcon;
   final String? labelText;
   final String? hintText;
   final Color? labelTextColor;
@@ -14,7 +16,7 @@ class CtmTextFormField extends StatelessWidget {
   final FocusNode? focusNode;
   final TextInputType? keyboardType;
 
-  const CtmTextFormField({
+  const CtmTextFormFieldWithIcon({
     super.key,
     this.focusNode,
     this.autofocus,
@@ -24,6 +26,8 @@ class CtmTextFormField extends StatelessWidget {
     this.hintTextColor,
     this.labelTextColor,
     this.keyboardType,
+    this.prefixIcon,
+    this.suffixIcon,
     this.labelText,
     this.hintText,
   });
@@ -41,6 +45,9 @@ class CtmTextFormField extends StatelessWidget {
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: ThemeColors().themeColor)),
+        suffixIcon: suffixIcon,
+        prefixIcon: Padding(
+            padding: const EdgeInsets.only(right: 8.0), child: prefixIcon),
         labelText: labelText,
         labelStyle: TextStyle(color: labelTextColor, fontSize: Sizes.s15.sp),
         hintText: hintText,

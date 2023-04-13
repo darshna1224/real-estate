@@ -10,6 +10,7 @@ import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/views/screens/home/detailapatment_sccreen.dart';
 import 'package:real_estate/views/screens/home/home_page/view_apartment_list.dart';
 import 'package:real_estate/views/screens/home/home_page/view_property_list.dart';
+import 'package:real_estate/views/screens/profile/edit_profile.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({super.key});
@@ -63,7 +64,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     radius: Sizes.s6.r,
                     icon: Icons.edit,
                     iconSize: 12,
-                    onPressed: () {}),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => EditProfileScreen(),
+                          ));
+                    }),
                 ScreenUtil().setVerticalSpacing(30),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,

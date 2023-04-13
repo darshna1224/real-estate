@@ -6,7 +6,7 @@ import 'package:real_estate/core/contants/elevatedbutton.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/contants/svgimage.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
-import 'package:real_estate/core/contants/textformfield.dart';
+import 'package:real_estate/core/contants/textformfield_icon.dart';
 import 'package:real_estate/core/utils/colors.dart';
 
 class SellPersonContact extends StatefulWidget {
@@ -37,7 +37,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                   keyboardType: TextInputType.name,
                   labelTextColor: ThemeColors().textColor,
                   prefixIcon: CtmSVGImage(
@@ -59,7 +59,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     style: TextStyle(color: ThemeColors().textColor),
                   ),
                 ),
-                CtmTextFormField(
+                CtmTextFormFieldWithIcon(
                   keyboardType: TextInputType.phone,
                   labelTextColor: ThemeColors().textColor,
                   prefixIcon: CtmSVGImage(
@@ -81,7 +81,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     ),
                     ScreenUtil().setHorizontalSpacing(15),
                     Flexible(
-                      child: CtmTextFormField(
+                      child: CtmTextFormFieldWithIcon(
                         keyboardType: TextInputType.phone,
                         labelTextColor: ThemeColors().textColor,
 
