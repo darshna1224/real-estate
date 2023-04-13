@@ -5,11 +5,9 @@ import 'package:flutter_utils/flutter_utils.dart';
 import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/utils/colors.dart';
-
-import 'package:real_estate/views/screens/authentication/signin/new_psw.dart';
-import 'package:real_estate/views/screens/authentication/signup/signup_page.dart';
 import 'package:real_estate/views/screens/home/home_page/menu_dashborad_page.dart';
 import 'package:real_estate/views/screens/notification/notification_screen.dart';
+import 'package:real_estate/views/screens/profile/profile.dart';
 import 'package:real_estate/views/screens/saved/saved_tab.dart';
 
 class BottomBar extends StatefulWidget {
@@ -24,7 +22,7 @@ class _BottomBarState extends State<BottomBar> {
     const MenuDashBoardPage(),
     const NotificationScreen(),
     const SavedScreen(),
-    const SignupScreen(),
+    const ProfileScreen(),
   ];
 
   int currentIndex = 0;
@@ -64,7 +62,8 @@ class _BottomBarState extends State<BottomBar> {
                 });
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 27, bottom: 0, left: 15),
+                padding: EdgeInsets.only(
+                    top: Sizes.s27.h, bottom: Sizes.s0.h, left: Sizes.s15.w),
                 child: Column(
                   children: [
                     SvgPicture.asset(currentIndex == 0
@@ -87,9 +86,9 @@ class _BottomBarState extends State<BottomBar> {
                 });
               },
               child: Padding(
-                padding: const EdgeInsets.only(
-                  top: 26,
-                  bottom: 0,
+                padding: EdgeInsets.only(
+                  top: Sizes.s26.h,
+                  bottom: Sizes.s0.h,
                 ),
                 child: Column(
                   children: [
@@ -113,15 +112,10 @@ class _BottomBarState extends State<BottomBar> {
                 });
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 12, bottom: 0, right: 15),
+                padding: EdgeInsets.only(
+                    top: Sizes.s32.h, bottom: Sizes.s0.h, right: Sizes.s15.w),
                 child: Column(
                   children: [
-                    SvgPicture.asset(
-                      currentIndex == 1
-                          ? AppAssets.bFillHomeIcon
-                          : AppAssets.bHomeIcon,
-                      color: Colors.transparent,
-                    ),
                     Text(
                       '       Sell\nYour Property',
                       style: TextStyle(fontSize: Sizes.s12.sp),
@@ -140,7 +134,8 @@ class _BottomBarState extends State<BottomBar> {
                 });
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 28, bottom: 0, right: 10),
+                padding: EdgeInsets.only(
+                    top: Sizes.s28.h, bottom: Sizes.s0.h, right: Sizes.s10.w),
                 child: Column(
                   children: [
                     SvgPicture.asset(currentIndex == 2
@@ -163,7 +158,8 @@ class _BottomBarState extends State<BottomBar> {
                 });
               },
               child: Padding(
-                padding: const EdgeInsets.only(top: 28, bottom: 12, right: 15),
+                padding: EdgeInsets.only(
+                    top: Sizes.s28.h, bottom: Sizes.s0.h, right: Sizes.s15.w),
                 child: Column(
                   children: [
                     SvgPicture.asset(currentIndex == 3

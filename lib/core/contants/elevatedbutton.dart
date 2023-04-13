@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_utils/flutter_utils.dart';
 import 'package:real_estate/core/utils/colors.dart';
 
 class CtmElevatedButton extends StatelessWidget {
@@ -13,6 +14,9 @@ class CtmElevatedButton extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
   final double? width;
   final double? radius;
+  final IconData? icon;
+  final Color? iconColor;
+  final double? iconSize;
 
   const CtmElevatedButton({
     this.radius,
@@ -26,6 +30,9 @@ class CtmElevatedButton extends StatelessWidget {
     required this.onPressed,
     this.margin,
     this.width,
+    this.icon,
+    this.iconColor,
+    this.iconSize,
     Key? key,
   }) : super(key: key);
 
@@ -41,10 +48,21 @@ class CtmElevatedButton extends StatelessWidget {
             backgroundColor: btnColor ?? ThemeColors().themeColor,
             fixedSize: Size(width ?? size.width, height ?? 63)),
         onPressed: onPressed,
-        child: Text(
-          text,
-          style: TextStyle(
-              color: txtColor, fontWeight: fontWeight, fontSize: fontSize),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text,
+              style: TextStyle(
+                  color: txtColor, fontWeight: fontWeight, fontSize: fontSize),
+            ),
+            ScreenUtil().setHorizontalSpacing(3),
+            Icon(
+              icon,
+              color: iconColor,
+              size: iconSize,
+            )
+          ],
         ),
       ),
     );

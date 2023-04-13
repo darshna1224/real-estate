@@ -30,6 +30,7 @@ class Sizes {
   static const double s24 = 24;
   static const double s25 = 25;
   static const double s26 = 26;
+  static const double s27 = 27;
   static const double s28 = 28;
   static const double s30 = 30;
   static const double s31 = 31;
@@ -65,8 +66,10 @@ class Sizes {
   static const double s98 = 98;
   static const double s100 = 100;
   static const double s103 = 103;
+  static const double s105 = 105;
   static const double s107 = 107;
   static const double s108 = 108;
+  static const double s109 = 109;
   static const double s110 = 110;
   static const double s115 = 115;
   static const double s117 = 117;

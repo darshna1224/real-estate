@@ -534,6 +534,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   RichText(
                                                       text: TextSpan(
                                                           style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                               color: ThemeColors()
                                                                   .textColor),
                                                           children: const [
@@ -552,6 +555,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   RichText(
                                                       text: TextSpan(
                                                           style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                               color: ThemeColors()
                                                                   .textColor),
                                                           children: const [
@@ -570,6 +576,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   RichText(
                                                       text: TextSpan(
                                                           style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                               color: ThemeColors()
                                                                   .textColor),
                                                           children: const [
@@ -728,6 +737,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                     RichText(
                                                         text: TextSpan(
                                                             style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
                                                                 color: ThemeColors()
                                                                     .textColor),
                                                             children: const [
@@ -749,6 +761,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                     RichText(
                                                         text: TextSpan(
                                                             style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
                                                                 color: ThemeColors()
                                                                     .textColor),
                                                             children: const [
@@ -770,6 +785,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                     RichText(
                                                         text: TextSpan(
                                                             style: TextStyle(
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
                                                                 color: ThemeColors()
                                                                     .textColor),
                                                             children: const [
