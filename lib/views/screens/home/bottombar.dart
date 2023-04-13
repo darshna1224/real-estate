@@ -10,6 +10,8 @@ import 'package:real_estate/views/screens/notification/notification_screen.dart'
 import 'package:real_estate/views/screens/profile/profile.dart';
 import 'package:real_estate/views/screens/saved/saved_tab.dart';
 
+import '../seller/sell_contact.dart';
+
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
 
@@ -43,7 +45,13 @@ class _BottomBarState extends State<BottomBar> {
 
       floatingActionButton: FloatingActionButton(
         backgroundColor: ThemeColors().themeColor,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => SellPersonContact(),
+              ));
+        },
         child: const Icon(Icons.add),
       ),
       bottomNavigationBar: BottomAppBar(

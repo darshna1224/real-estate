@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/utils/colors.dart';
+import 'package:real_estate/views/screens/upload_property/location_screen.dart';
+import 'package:real_estate/views/screens/upload_property/overview.dart';
+import 'package:real_estate/views/screens/upload_property/photos.dart';
 
 class UploadPropertyScreen extends StatefulWidget {
   const UploadPropertyScreen({super.key});
@@ -25,11 +30,18 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen>
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            CupertinoIcons.back,
-            color: ThemeColors().black,
+          leading: Padding(
+            padding: const EdgeInsets.all(17.0),
+            child: Container(
+              height: 18,
+              width: 20,
+              child: SvgPicture.asset(
+                AppAssets.backArrow,
+                color: ThemeColors().black,
+              ),
+            ),
           ),
-          elevation: 0,
+          elevation: 6,
           backgroundColor: ThemeColors().white,
           title: Text(
             'Upload Property',
@@ -68,7 +80,9 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen>
                 )
               ]),
         ),
-        body: Column(),
+        body: TabBarView(
+          children: [OverviewScreen(), LocationScreen(), PhotoScreen()],
+        ),
       ),
     );
   }

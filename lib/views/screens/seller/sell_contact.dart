@@ -91,7 +91,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     ),
                   ],
                 ),
-                ScreenUtil().setVerticalSpacing(70),
+                ScreenUtil().setVerticalSpacing(50),
                 CtmElevatedButton(
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
@@ -105,6 +105,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                             _buildPopupDialog(context),
                       );
                     }),
+                ScreenUtil().setVerticalSpacing(30),
               ],
             ),
           ),

@@ -2,18 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
-class Photos extends StatefulWidget {
-  const Photos({super.key});
+class PhotoScreen extends StatefulWidget {
+  const PhotoScreen({super.key});
 
   @override
-  State<Photos> createState() => _PhotosState();
+  State<PhotoScreen> createState() => _PhotoScreenState();
 }
 
-class _PhotosState extends State<Photos> {
+class _PhotoScreenState extends State<PhotoScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(),
+      body: Column(
+        children: [Text('Photos')],
+      ),
     );
   }
 }
