@@ -9,6 +9,7 @@ import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/views/screens/authentication/signin/new_psw.dart';
+import 'package:real_estate/views/screens/home/bottombar.dart';
 
 class OtpScreen extends StatefulWidget {
   const OtpScreen({Key? key}) : super(key: key);
@@ -114,7 +115,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const ForgotPswNew(),
+                      builder: (context) => const BottomBar(),
                     ));
               },
               txtColor: ThemeColors().white,

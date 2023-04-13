@@ -33,7 +33,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                            color: ThemeColors().grey.withOpacity(0.5),
+                            color: ThemeColors().grey.withOpacity(0.3),
                             blurRadius: 10.0,
                             spreadRadius: 2.0,
                             offset: Offset(
@@ -54,7 +54,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                 ),
               ),
             ),
-            ScreenUtil().setVerticalSpacing(35.0),
+            ScreenUtil().setVerticalSpacing(20.0),
             Expanded(
               child: SizedBox(
                 child: ListView.separated(
@@ -73,7 +73,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                           decoration: BoxDecoration(
                               boxShadow: [
                                 BoxShadow(
-                                    color: ThemeColors().grey.withOpacity(0.5),
+                                    color: ThemeColors().grey.withOpacity(0.3),
                                     blurRadius: 10.0,
                                     spreadRadius: 0.5,
                                     offset: Offset(
@@ -92,9 +92,11 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                     height: Sizes.s83.w,
                                     width: Sizes.s83.w,
                                     decoration: BoxDecoration(
-                                        boxShadow: const [
+                                        boxShadow: [
                                           BoxShadow(
-                                              color: Colors.grey,
+                                              color: ThemeColors()
+                                                  .grey
+                                                  .withOpacity(0.3),
                                               blurRadius: 10.0,
                                               spreadRadius: 1.5,
                                               offset: Offset(

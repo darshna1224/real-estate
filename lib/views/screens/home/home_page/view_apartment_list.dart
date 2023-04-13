@@ -54,32 +54,35 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                 ),
               ),
             ),
-            ScreenUtil().setVerticalSpacing(35.0),
+            ScreenUtil().setVerticalSpacing(20.0),
             Expanded(
               child: SizedBox(
-                child: ListView.separated(
-                  separatorBuilder: (context, index) {
-                    return ScreenUtil().setVerticalSpacing(20.0);
-                  },
-                  itemCount: 5,
-                  itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {},
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                        child: Container(
-                          decoration: BoxDecoration(
-                              color: ThemeColors().white,
-                              borderRadius: BorderRadius.circular(Sizes.s15.r)),
-                          height: Sizes.s265.h,
-                          width: Sizes.s177.h,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
+                child: GlowingOverscrollIndicator(
+                  axisDirection: AxisDirection.down,
+                  color: Colors.white10,
+                  child: ListView.separated(
+                    separatorBuilder: (context, index) {
+                      return ScreenUtil().setVerticalSpacing(20.0);
+                    },
+                    itemCount: 5,
+                    itemBuilder: (context, index) {
+                      return GestureDetector(
+                        onTap: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                          child: Container(
+                            decoration: BoxDecoration(
+                                color: ThemeColors().white,
+                                borderRadius:
+                                    BorderRadius.circular(Sizes.s15.r)),
+                            height: Sizes.s265.h,
+                            width: Sizes.s177.h,
                             child: Column(
                               children: [
                                 ClipRRect(
-                                  borderRadius:
-                                      BorderRadius.circular(Sizes.s15.r),
+                                  borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(Sizes.s15.r),
+                                      topRight: Radius.circular(Sizes.s15.r)),
                                   child: Stack(
                                     children: [
                                       Container(
@@ -94,8 +97,8 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                                 fit: BoxFit.cover)),
                                       ),
                                       Positioned(
-                                        top: 11,
-                                        right: 11,
+                                        top: 15,
+                                        right: 20,
                                         child: Container(
                                           decoration: BoxDecoration(
                                               borderRadius:
@@ -104,13 +107,13 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                               color: ThemeColors()
                                                   .white
                                                   .withOpacity(0.5)),
-                                          height: Sizes.s19.h,
-                                          width: Sizes.s19.w,
+                                          height: Sizes.s25.h,
+                                          width: Sizes.s25.w,
                                           child: Padding(
                                             padding: const EdgeInsets.all(6.0),
                                             child: Icon(
                                               CupertinoIcons.bookmark_fill,
-                                              size: 10,
+                                              size: 15,
                                               color: ThemeColors().white,
                                             ),
                                           ),
@@ -123,18 +126,19 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                 Row(
                                   children: [
                                     ScreenUtil().setHorizontalSpacing(24.0),
-                                    Expanded(
+                                    Flexible(
                                       child: Text(
                                         '\$24,532',
                                         // 'Studio Apartment',
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
+                                            color: ThemeColors().orange,
                                             fontWeight: FontWeight.w700,
-                                            fontSize: Sizes.s13.sp),
+                                            fontSize: Sizes.s18.sp),
                                       ),
                                     ),
-                                    ScreenUtil().setHorizontalSpacing(2),
+                                    ScreenUtil().setHorizontalSpacing(7),
                                     Expanded(
                                       child: Text(
                                         'Studio Apartment',
@@ -143,77 +147,91 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                         style: TextStyle(
                                             fontWeight: FontWeight.w700,
                                             fontSize: Sizes.s14.sp,
-                                            color: ThemeColors().orange),
+                                            color: ThemeColors().textColor),
                                       ),
                                     ),
                                     ScreenUtil().setHorizontalSpacing(24.0)
                                   ],
                                 ),
                                 ScreenUtil().setVerticalSpacing(18.0),
-                                Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Column(
-                                      children: [
-                                        SvgPicture.asset(
-                                          AppAssets.bedIcon,
-                                          // color: ThemeColors().textColor,
-                                        ),
-                                        RichText(
-                                            text: TextSpan(
-                                                style: TextStyle(
-                                                    color: ThemeColors()
-                                                        .textColor),
-                                                children: const [
-                                              TextSpan(text: '3'),
-                                              TextSpan(text: ' Bed'),
-                                            ]))
-                                      ],
-                                    ),
-                                    Column(
-                                      children: [
-                                        SvgPicture.asset(
-                                          AppAssets.bathIcon,
-                                          color: ThemeColors().textColor,
-                                        ),
-                                        RichText(
-                                            text: TextSpan(
-                                                style: TextStyle(
-                                                    color: ThemeColors()
-                                                        .textColor),
-                                                children: const [
-                                              TextSpan(text: '2'),
-                                              TextSpan(text: ' Bath'),
-                                            ]))
-                                      ],
-                                    ),
-                                    Column(
-                                      children: [
-                                        SvgPicture.asset(
-                                          AppAssets.carIcon,
-                                          color: ThemeColors().textColor,
-                                        ),
-                                        RichText(
-                                            text: TextSpan(
-                                                style: TextStyle(
-                                                    color: ThemeColors()
-                                                        .textColor),
-                                                children: const [
-                                              TextSpan(text: '2'),
-                                              TextSpan(text: ' Parking'),
-                                            ]))
-                                      ],
-                                    )
-                                  ],
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 35),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      Column(
+                                        children: [
+                                          SvgPicture.asset(
+                                            AppAssets.bedIcon,
+                                            height: 18,
+                                            width: 21,
+                                            color:
+                                                Color.fromARGB(255, 22, 0, 0),
+                                          ),
+                                          ScreenUtil().setVerticalSpacing(7),
+                                          RichText(
+                                              text: TextSpan(
+                                                  style: TextStyle(
+                                                      color: ThemeColors()
+                                                          .textColor),
+                                                  children: const [
+                                                TextSpan(text: '3'),
+                                                TextSpan(text: ' Bed'),
+                                              ]))
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          SvgPicture.asset(
+                                            AppAssets.bathIcon,
+                                            height: 18,
+                                            width: 21,
+                                            color: ThemeColors().title,
+                                          ),
+                                          ScreenUtil().setVerticalSpacing(7),
+                                          RichText(
+                                              text: TextSpan(
+                                                  style: TextStyle(
+                                                      color: ThemeColors()
+                                                          .textColor),
+                                                  children: const [
+                                                TextSpan(text: '2'),
+                                                TextSpan(text: ' Bath'),
+                                              ]))
+                                        ],
+                                      ),
+                                      Column(
+                                        children: [
+                                          SvgPicture.asset(
+                                            AppAssets.carIcon,
+                                            height: 18,
+                                            width: 21,
+                                            color: ThemeColors().title,
+                                          ),
+                                          ScreenUtil().setVerticalSpacing(7),
+                                          RichText(
+                                              text: TextSpan(
+                                                  style: TextStyle(
+                                                      color: ThemeColors()
+                                                          .textColor),
+                                                  children: const [
+                                                TextSpan(text: '2'),
+                                                TextSpan(text: ' Parking'),
+                                              ]))
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 )
                               ],
                             ),
                           ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 ),
               ),
             )

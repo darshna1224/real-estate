@@ -63,7 +63,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               child: currentIndex == contents.length - 1
                                   ? const Text('')
                                   : InkWell(
-                                      onTap: () {},
+                                      onTap: () {
+                                        Navigator.pushReplacement(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => LoginPage(),
+                                            ));
+                                      },
                                       child: const Text(
                                         'Skip',
                                         style: TextStyle(
