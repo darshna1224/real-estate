@@ -33,7 +33,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   'My Profile',
                   style: TextStyle(
                       color: ThemeColors().black,
-                      fontSize: Sizes.s25.sp,
+                      fontSize: Sizes.s23.sp,
                       fontWeight: FontWeight.w600),
                 ),
                 ScreenUtil().setVerticalSpacing(30.0),

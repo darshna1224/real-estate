@@ -6,6 +6,9 @@ class CtmTextFormField extends StatelessWidget {
   final String? labelText;
   final String? hintText;
   final Color? labelTextColor;
+  final Color? textColor;
+  final double? fontSize;
+  final FontWeight? fontWeight;
   final Color? hintTextColor;
   final TextEditingController? controller;
   final void Function(String)? onChanged;
@@ -25,6 +28,9 @@ class CtmTextFormField extends StatelessWidget {
     this.controller,
     this.hintTextColor,
     this.labelTextColor,
+    this.textColor,
+    this.fontSize,
+    this.fontWeight,
     this.keyboardType,
     this.labelText,
     this.hintText,
@@ -42,6 +48,10 @@ class CtmTextFormField extends StatelessWidget {
       controller: controller,
       keyboardType: keyboardType,
       cursorColor: ThemeColors().themeColor,
+      style: TextStyle(
+          color: textColor ?? ThemeColors().title,
+          fontSize: fontSize ?? Sizes.s16.sp,
+          fontWeight: fontWeight ?? FontWeight.w600),
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(color: ThemeColors().themeColor)),
