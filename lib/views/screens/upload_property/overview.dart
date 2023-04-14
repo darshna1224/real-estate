@@ -74,20 +74,22 @@ class _OverviewScreenState extends State<OverviewScreen> {
           ),
           Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: DropdownButton(
-                  isExpanded: true,
-                  style: TextStyle(
-                      color: ThemeColors().textColor,
-                      fontSize: Sizes.s15.sp,
-                      fontWeight: FontWeight.w500,
-                      fontFamily: 'Karla'),
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      selectedProperty = newValue!;
-                    });
-                  },
-                  value: selectedProperty,
-                  items: dropdownItems)),
+              child: DropdownButtonHideUnderline(
+                child: DropdownButton(
+                    isExpanded: true,
+                    style: TextStyle(
+                        color: ThemeColors().textColor,
+                        fontSize: Sizes.s15.sp,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'Karla'),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        selectedProperty = newValue!;
+                      });
+                    },
+                    value: selectedProperty,
+                    items: dropdownItems),
+              )),
           ScreenUtil().setVerticalSpacing(30),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),

@@ -17,10 +17,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Karla'),
-      home:
-          //  UploadPropertyScreen(),
-          // const SellPersonContact(),
-          const BottomBar(),
+      home: UploadPropertyScreen(),
+      // const SellPersonContact(),
+      // const BottomBar(),
       builder: (context, child) {
         ScreenUtil.init(context);
         return child!;
