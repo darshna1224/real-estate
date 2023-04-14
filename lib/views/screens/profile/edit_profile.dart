@@ -30,6 +30,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ScreenUtil().setVerticalSpacing(20.0),
                   Row(
@@ -50,64 +51,100 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                           ),
                         ),
                       ),
-                      ScreenUtil().setHorizontalSpacing(30.0),
+                      ScreenUtil().setHorizontalSpacing(20.0),
                       Text(
-                        'My Profile',
+                        'Edit Profile',
                         style: TextStyle(
                             color: ThemeColors().black,
-                            fontSize: Sizes.s25.sp,
+                            fontSize: Sizes.s23.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ],
                   ),
                   ScreenUtil().setVerticalSpacing(30.0),
-                  Container(
-                    height: Sizes.s130.h,
-                    width: Sizes.s130.w,
-                    decoration: BoxDecoration(
-                        border:
-                            Border.all(color: ThemeColors().orange, width: 2),
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                            image: AssetImage(
-                                'assets/images/image/profilepic.png'),
-                            fit: BoxFit.cover)),
+                  Center(
+                    child: Stack(
+                      children: [
+                        Container(
+                          height: Sizes.s130.h,
+                          width: Sizes.s130.w,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: ThemeColors().orange, width: 3),
+                              shape: BoxShape.circle,
+                              image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/image/profilepic.png'),
+                                  fit: BoxFit.cover)),
+                        ),
+                        Positioned(
+                          right: 0,
+                          bottom: 0,
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              height: Sizes.s36.h,
+                              width: Sizes.s36.w,
+                              padding: EdgeInsets.all(6),
+                              decoration: BoxDecoration(
+                                border: Border.all(
+                                    color: ThemeColors().white, width: 3),
+                                shape: BoxShape.circle,
+                                color: ThemeColors().orange,
+                              ),
+                              child: SvgPicture.asset(AppAssets.cameraIcon),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   ),
                   ScreenUtil().setVerticalSpacing(80.0),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'FullName',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: Sizes.s16.sp,
-                            color: ThemeColors().textgrey),
-                      )),
+                  Text(
+                    'FullName',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: Sizes.s15.sp,
+                        color: ThemeColors().textgrey),
+                  ),
                   CtmTextFormField(
                     keyboardType: TextInputType.name,
                     hintText: 'Johan Roy',
                     hintTextColor: ThemeColors().blackText,
-                    hintFontSize: 16,
+                    hintFontSize: Sizes.s15.sp,
                     hintFontWeight: FontWeight.w600,
                   ),
                   ScreenUtil().setVerticalSpacing(20.0),
-                  Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        'Mobile Number',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            fontSize: Sizes.s16.sp,
-                            color: ThemeColors().textgrey),
-                      )),
+                  Text(
+                    'Email',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: Sizes.s15.sp,
+                        color: ThemeColors().textgrey),
+                  ),
+                  CtmTextFormField(
+                    keyboardType: TextInputType.emailAddress,
+                    hintText: 'Johanroy@gmail.com',
+                    hintTextColor: ThemeColors().blackText,
+                    hintFontSize: Sizes.s15.sp,
+                    hintFontWeight: FontWeight.w600,
+                  ),
+                  ScreenUtil().setVerticalSpacing(20.0),
+                  Text(
+                    'Mobile Number',
+                    style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: Sizes.s15.sp,
+                        color: ThemeColors().textgrey),
+                  ),
                   CtmTextFormField(
                     keyboardType: TextInputType.phone,
                     hintText: '+91 98765 4321',
                     hintTextColor: ThemeColors().blackText,
-                    hintFontSize: 16,
+                    hintFontSize: Sizes.s15.sp,
                     hintFontWeight: FontWeight.w600,
                   ),
-                  ScreenUtil().setVerticalSpacing(Sizes.s130.h),
+                  ScreenUtil().setVerticalSpacing(Sizes.s70.h),
                   Row(
                     children: [
                       Flexible(
@@ -147,3 +184,14 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     );
   }
 }
+
+// class ApartmentFilter {
+//   final Icon icon;
+//   final String title;
+
+//   ApartmentFilter({required this.icon, required this.title});
+// }
+
+// List<ApartmentFilter> listApartment = [
+//   ApartmentFilter(icon: icon, title: title)
+// ];
