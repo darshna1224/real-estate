@@ -3,11 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_utils/flutter_utils.dart';
 import 'package:real_estate/core/contants/app_assets.dart';
-import 'package:real_estate/core/contants/elevatedbutton.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
-import 'package:real_estate/views/screens/home/detailapatment_sccreen.dart';
+import 'package:real_estate/views/screens/home/detailapartment_sccreen.dart';
 import 'package:real_estate/views/screens/home/home_page/view_apartment_list.dart';
 import 'package:real_estate/views/screens/home/home_page/view_property_list.dart';
 import 'package:real_estate/views/screens/profile/edit_profile.dart';
@@ -32,7 +31,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 Text(
                   'My Profile',
                   style: TextStyle(
-                      color: ThemeColors().black,
+                      color: ThemeColors.black,
                       fontSize: Sizes.s23.sp,
                       fontWeight: FontWeight.w600),
                 ),
@@ -41,9 +40,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   height: Sizes.s100.h,
                   width: Sizes.s105.w,
                   decoration: BoxDecoration(
-                      border: Border.all(color: ThemeColors().orange, width: 2),
+                      border: Border.all(color: ThemeColors.orange, width: 2),
                       shape: BoxShape.circle,
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           image:
                               AssetImage('assets/images/image/profilepic.png'),
                           fit: BoxFit.cover)),
@@ -58,13 +57,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(Sizes.s6.r)),
-                      backgroundColor: ThemeColors().themeColor,
+                      backgroundColor: ThemeColors.themeColor,
                       fixedSize: Size(Sizes.s109.w, Sizes.s27.h)),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => EditProfileScreen(),
+                          builder: (context) => const EditProfileScreen(),
                         ));
                   },
                   child: Row(
@@ -73,12 +72,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Text(
                         'Edit profile',
                         style: TextStyle(
-                            color: ThemeColors().white,
+                            color: ThemeColors.white,
                             fontWeight: FontWeight.w600,
                             fontSize: 13),
                       ),
                       ScreenUtil().setHorizontalSpacing(3),
-                      Icon(
+                      const Icon(
                         Icons.edit,
                         // color: iconColor,
                         size: 12,
@@ -86,24 +85,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ],
                   ),
                 ),
-                // CtmElevatedButton(
-                //     borderColor: ThemeColors().transparent,
-                //     txtColor: ThemeColors().white,
-                //     text: 'Edit profile',
-                //     height: Sizes.s27.h,
-                //     fontSize: 13,
-                //     fontWeight: FontWeight.w600,
-                //     width: Sizes.s109.w,
-                //     radius: Sizes.s6.r,
-                //     icon: Icons.edit,
-                //     iconSize: 12,
-                //     onPressed: () {
-                //       Navigator.push(
-                //           context,
-                //           MaterialPageRoute(
-                //             builder: (context) => EditProfileScreen(),
-                //           ));
-                //     }),
                 ScreenUtil().setVerticalSpacing(30),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -121,25 +102,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   text: 'Popular',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w700,
-                                      color: ThemeColors().black),
+                                      color: ThemeColors.black),
                                 ),
-                                // TextSpan(
-                                //   text: ' (364)',
-                                //   style: TextStyle(
-                                //       fontWeight: FontWeight.w500,
-                                //       color: ThemeColors().orange),
-                                // )
                               ])),
                           CtmTextButton(
                             text: 'View all',
-                            fontcolor: ThemeColors().orange,
+                            fontcolor: ThemeColors.orange,
                             fontSize: Sizes.s12.sp,
                             fontWeight: FontWeight.w700,
                             onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ViewApartmentList(),
+                                    builder: (context) =>
+                                        const ViewApartmentList(),
                                   ));
                             },
                           )
@@ -170,7 +146,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                 },
                                 child: Container(
                                   decoration: BoxDecoration(
-                                      color: ThemeColors().white,
+                                      color: ThemeColors.white,
                                       borderRadius:
                                           BorderRadius.circular(Sizes.s15.r)),
                                   height: Sizes.s265.h,
@@ -202,8 +178,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               Sizes.s5.r),
-                                                      color: ThemeColors()
-                                                          .white
+                                                      color: ThemeColors.white
                                                           .withOpacity(0.5)),
                                                   height: Sizes.s19.h,
                                                   width: Sizes.s19.w,
@@ -215,8 +190,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                       CupertinoIcons
                                                           .bookmark_fill,
                                                       size: 10,
-                                                      color:
-                                                          ThemeColors().white,
+                                                      color: ThemeColors.white,
                                                     ),
                                                   ),
                                                 ),
@@ -248,8 +222,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.w700,
                                                     fontSize: Sizes.s14.sp,
-                                                    color:
-                                                        ThemeColors().orange),
+                                                    color: ThemeColors.orange),
                                               ),
                                             )
                                           ],
@@ -263,7 +236,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               children: [
                                                 SvgPicture.asset(
                                                   AppAssets.bedIcon,
-                                                  // color: ThemeColors().textColor,
+                                                  // color: ThemeColors.textColor,
                                                 ),
                                                 RichText(
                                                     text: TextSpan(
@@ -272,7 +245,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                             // Sizes.s9.sp,
                                                             fontWeight:
                                                                 FontWeight.w500,
-                                                            color: ThemeColors()
+                                                            color: ThemeColors
                                                                 .textColor),
                                                         children: const [
                                                       TextSpan(text: '3'),
@@ -284,15 +257,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               children: [
                                                 SvgPicture.asset(
                                                   AppAssets.bathIcon,
-                                                  color:
-                                                      ThemeColors().textColor,
+                                                  color: ThemeColors.textColor,
                                                 ),
                                                 RichText(
                                                     text: TextSpan(
                                                         style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight.w500,
-                                                            color: ThemeColors()
+                                                            color: ThemeColors
                                                                 .textColor),
                                                         children: const [
                                                       TextSpan(text: '2'),
@@ -304,15 +276,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               children: [
                                                 SvgPicture.asset(
                                                   AppAssets.carIcon,
-                                                  color:
-                                                      ThemeColors().textColor,
+                                                  color: ThemeColors.textColor,
                                                 ),
                                                 RichText(
                                                     text: TextSpan(
                                                         style: TextStyle(
                                                             fontWeight:
                                                                 FontWeight.w500,
-                                                            color: ThemeColors()
+                                                            color: ThemeColors
                                                                 .textColor),
                                                         children: const [
                                                       TextSpan(text: '2'),
@@ -347,25 +318,20 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   text: 'My Favorite',
                                   style: TextStyle(
                                       fontWeight: FontWeight.w700,
-                                      color: ThemeColors().black),
+                                      color: ThemeColors.black),
                                 ),
-                                // TextSpan(
-                                //   text: ' (232)',
-                                //   style: TextStyle(
-                                //       fontWeight: FontWeight.w500,
-                                //       color: ThemeColors().orange),
-                                // )
                               ])),
                           CtmTextButton(
                             text: 'View all',
-                            fontcolor: ThemeColors().orange,
+                            fontcolor: ThemeColors.orange,
                             fontSize: Sizes.s12.sp,
                             fontWeight: FontWeight.w700,
                             onTap: () {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => ViewPropertyList(),
+                                    builder: (context) =>
+                                        const ViewPropertyList(),
                                   ));
                             },
                           )
@@ -374,7 +340,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                     ScreenUtil().setVerticalSpacing(14),
                     Padding(
-                      padding: EdgeInsets.only(left: 30),
+                      padding: const EdgeInsets.only(left: 30),
                       child: SizedBox(
                         height: Sizes.s103.h,
                         child: SizedBox(
@@ -391,7 +357,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                   height: Sizes.s103.h,
                                   width: Sizes.s280.w,
                                   decoration: BoxDecoration(
-                                      color: ThemeColors().white,
+                                      color: ThemeColors.white,
                                       borderRadius:
                                           BorderRadius.circular(Sizes.s15.r)),
                                   child: Row(
@@ -420,8 +386,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           Sizes.s5.r),
-                                                  color: ThemeColors()
-                                                      .white
+                                                  color: ThemeColors.white
                                                       .withOpacity(0.5)),
                                               height: Sizes.s19.h,
                                               width: Sizes.s19.w,
@@ -431,7 +396,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 child: Icon(
                                                   CupertinoIcons.bookmark_fill,
                                                   size: 10,
-                                                  color: ThemeColors().white,
+                                                  color: ThemeColors.white,
                                                 ),
                                               ),
                                             ),
@@ -462,7 +427,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                 children: [
                                                   SvgPicture.asset(
                                                     AppAssets.bedIcon,
-                                                    // color: ThemeColors()
+                                                    // color: ThemeColors
                                                     //     .textColor,
                                                   ),
                                                   RichText(
@@ -471,7 +436,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
-                                                              color: ThemeColors()
+                                                              color: ThemeColors
                                                                   .textColor),
                                                           children: const [
                                                         TextSpan(text: '3'),
@@ -486,7 +451,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                   SvgPicture.asset(
                                                     AppAssets.bathIcon,
                                                     color:
-                                                        ThemeColors().textColor,
+                                                        ThemeColors.textColor,
                                                   ),
                                                   RichText(
                                                       text: TextSpan(
@@ -494,7 +459,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
-                                                              color: ThemeColors()
+                                                              color: ThemeColors
                                                                   .textColor),
                                                           children: const [
                                                         TextSpan(text: '2'),
@@ -509,7 +474,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                   SvgPicture.asset(
                                                     AppAssets.carIcon,
                                                     color:
-                                                        ThemeColors().textColor,
+                                                        ThemeColors.textColor,
                                                   ),
                                                   RichText(
                                                       text: TextSpan(
@@ -517,7 +482,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
-                                                              color: ThemeColors()
+                                                              color: ThemeColors
                                                                   .textColor),
                                                           children: const [
                                                         TextSpan(text: '2'),
@@ -537,7 +502,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w700,
                                                   fontSize: Sizes.s14.sp,
-                                                  color: ThemeColors().orange),
+                                                  color: ThemeColors.orange),
                                             ),
                                           )
                                         ],

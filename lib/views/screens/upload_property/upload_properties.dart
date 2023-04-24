@@ -37,31 +37,31 @@ class _UploadPropertyScreenState extends State<UploadPropertyScreen>
               width: 20,
               child: SvgPicture.asset(
                 AppAssets.backArrow,
-                color: ThemeColors().black,
+                color: ThemeColors.black,
               ),
             ),
           ),
           elevation: 6,
-          backgroundColor: ThemeColors().white,
+          backgroundColor: ThemeColors.white,
           title: Text(
             'Upload Property',
             style: TextStyle(
-                color: ThemeColors().black,
+                color: ThemeColors.black,
                 fontWeight: FontWeight.w600,
                 fontSize: Sizes.s20.sp),
           ),
           bottom: TabBar(
-              unselectedLabelColor: ThemeColors().textColor,
+              unselectedLabelColor: ThemeColors.textColor,
               unselectedLabelStyle: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: Sizes.s15.sp,
-                  color: ThemeColors().textColor),
+                  color: ThemeColors.textColor),
               labelStyle: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: Sizes.s15.sp,
-                  color: ThemeColors().themeColor),
-              labelColor: ThemeColors().themeColor,
-              indicatorColor: ThemeColors().transparent,
+                  color: ThemeColors.themeColor),
+              labelColor: ThemeColors.themeColor,
+              indicatorColor: ThemeColors.transparent,
               tabs: const [
                 Tab(
                   child: Text(

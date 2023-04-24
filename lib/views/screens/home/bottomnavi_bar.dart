@@ -1,105 +1,412 @@
-// import 'package:flutter/cupertino.dart';
-// import 'package:flutter/material.dart';
-// import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
-// import 'package:real_estate/core/utils/colors.dart';
-// import 'package:real_estate/views/screens/authentication/signin/login_page.dart';
-// import 'package:real_estate/views/screens/authentication/signup/signup_page.dart';
-// import 'package:real_estate/views/screens/home/home_page/menu_dashborad_page.dart';
-// import 'package:real_estate/views/screens/seller/sell_contact.dart';
-// import 'package:real_estate/views/screens/upload_property/notification_upload.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_utils/flutter_utils.dart';
+import 'package:get/get.dart';
+import 'package:real_estate/core/contants/app_assets.dart';
+import 'package:real_estate/core/contants/sizes.dart';
+import 'package:real_estate/core/utils/colors.dart';
+import 'package:real_estate/models/bottombarview_model.dart';
+import 'package:real_estate/views/screens/home/home_page/custom_drawer_screen.dart';
+import 'package:real_estate/views/screens/home/home_page/menu_dashborad_page.dart';
+import 'package:real_estate/views/screens/notification/notification_screen.dart';
+import 'package:real_estate/views/screens/profile/profile.dart';
+import 'package:real_estate/views/screens/saved/saved_tab.dart';
+import 'package:real_estate/views/screens/seller/sell_contact.dart';
 
-// class BottomNaviBar extends StatefulWidget {
-//   const BottomNaviBar({Key? key}) : super(key: key);
+class BottomBar extends StatefulWidget {
+  const BottomBar({super.key});
 
-//   @override
-//   State<BottomNaviBar> createState() => _BottomNaviBarState();
-// }
+  @override
+  State<BottomBar> createState() => _BottomBarState();
+}
 
-// class _BottomNaviBarState extends State<BottomNaviBar> {
-//   List<Widget> _buildScreens() {
-//     return [
-//       const MenuDashBoardPage(),
-//       const SignupScreen(),
-//       const SellPersonContact(),
-//       const SignupScreen(),
-//       const ProfileScreen(),
-//     ];
-//   }
+class _BottomBarState extends State<BottomBar> {
+  // get pages => list;
+  final _bottomBarViewModel = Get.find<BottomBarViewModel>();
 
-//   List<PersistentBottomNavBarItem> _navBarsItems() {
-//     return [
-//       PersistentBottomNavBarItem(
-//         icon: const Icon(CupertinoIcons.house),
-//         title: ("Home"),
-//         activeColorPrimary: ThemeColors().themeColor,
-//         inactiveColorPrimary: CupertinoColors.systemGrey,
-//       ),
-//       PersistentBottomNavBarItem(
-//         icon: const Icon(CupertinoIcons.bell_solid),
-//         title: ("Notifications"),
-//         activeColorPrimary: ThemeColors().themeColor,
-//         inactiveColorPrimary: CupertinoColors.systemGrey,
-//       ),
-//       PersistentBottomNavBarItem(
-//         icon: const Icon(CupertinoIcons.add),
-//         title: ("Sell\nYour Property"),
-//         activeColorPrimary: ThemeColors().themeColor,
-//         inactiveColorPrimary: CupertinoColors.systemGrey,
-//       ),
-//       PersistentBottomNavBarItem(
-//         icon: const Icon(CupertinoIcons.bookmark),
-//         title: ("Saved"),
-//         activeColorPrimary: ThemeColors().themeColor,
-//         inactiveColorPrimary: CupertinoColors.systemGrey,
-//       ),
-//       PersistentBottomNavBarItem(
-//         icon: const Icon(CupertinoIcons.person_alt),
-//         title: ("Profile"),
-//         activeColorPrimary: ThemeColors().themeColor,
-//         inactiveColorPrimary: CupertinoColors.systemGrey,
-//       ),
-//     ];
-//   }
+  // final NotificationMethods _notification = NotificationMethods();
 
-//   @override
-//   Widget build(BuildContext context) {
-//     PersistentTabController controller;
+  // BidAcceptCountModel? bidAcceptCountModel;
 
-//     controller = PersistentTabController(initialIndex: 0);
+  List list = [
+    const MenuDashBoardPage(),
+    const NotificationScreen(),
+    const SavedScreen(),
+    const ProfileScreen(),
+  ];
 
-//     return PersistentTabView(
-//       context,
-//       controller: controller,
-//       screens: _buildScreens(),
-//       items: _navBarsItems(),
-//       confineInSafeArea: true,
+  int currentIndex = 0;
+  // int _selectedIndex = 0;
+  int isSelected = 0;
 
-//       backgroundColor: Colors.white, // Default is Colors.white.
-//       handleAndroidBackButtonPress: true, // Default is true.
-//       resizeToAvoidBottomInset:
-//           true, // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
-//       stateManagement: true, // Default is true.
-//       hideNavigationBarWhenKeyboardShows:
-//           true, // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
-//       decoration: NavBarDecoration(
-//         borderRadius: BorderRadius.circular(10.0),
-//         colorBehindNavBar: Colors.white,
-//       ),
-//       popAllScreensOnTapOfSelectedTab: true,
-//       popActionScreens: PopActionScreensType.all,
-//       itemAnimationProperties: const ItemAnimationProperties(
-//         // Navigation Bar's items animation properties.
-//         duration: Duration(milliseconds: 200),
-//         curve: Curves.ease,
-//       ),
-//       screenTransitionAnimation: const ScreenTransitionAnimation(
-//         // Screen transition animation on change of selected tab.
-//         animateTabTransition: true,
-//         curve: Curves.ease,
-//         duration: Duration(milliseconds: 200),
-//       ),
-//       navBarStyle:
-//           NavBarStyle.style15, // Choose the nav bar style with this property.
-//     );
-//   }
-// }
+  void onTap(int index) {
+    setState(() {
+      currentIndex = index;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: GetBuilder<BottomBarViewModel>(
+        builder: (controller) {
+          return Stack(
+            children: [
+              CustomDrawerScreen(),
+              AnimatedContainer(
+                duration: Duration(milliseconds: 400),
+                height: Get.height,
+                width: Get.width,
+                transform: !controller.isDrawerVisible
+                    ? (Matrix4.translationValues(0.0, 0.0, 0)..scale(1.25))
+                    : Matrix4.translationValues(
+                        Get.width * 0.7, Get.height * 0.13, 0)
+                  ..scale(0.8),
+                child: GestureDetector(
+                  onTap: () {
+                    if (controller.isDrawerVisible) {
+                      _bottomBarViewModel.setIsDrawerVisible();
+                    }
+                  },
+                  child: ClipRRect(
+                    borderRadius: !controller.isDrawerVisible
+                        ? BorderRadius.zero
+                        : BorderRadius.horizontal(left: Radius.circular(20)),
+                    child: Scaffold(
+                      extendBody: false,
+                      floatingActionButtonLocation:
+                          FloatingActionButtonLocation.miniCenterDocked,
+                      floatingActionButton: FloatingActionButton(
+                        backgroundColor: ThemeColors.themeColor,
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => SellPersonContact(),
+                              ));
+                        },
+                        child: const Icon(Icons.add),
+                      ),
+                      backgroundColor: Colors.white,
+                      body: list[currentIndex],
+                      bottomNavigationBar: BottomAppBar(
+                        color: ThemeColors.white,
+                        height: Sizes.s70.h,
+                        notchMargin: 5,
+                        shape: const CircularNotchedRectangle(),
+                        child: Row(
+                          // mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  onTap(0);
+                                });
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    top: Sizes.s27.h,
+                                    bottom: Sizes.s0.h,
+                                    left: Sizes.s15.w),
+                                child: Column(
+                                  children: [
+                                    SvgPicture.asset(currentIndex == 0
+                                        ? AppAssets.bFillHomeIcon
+                                        : AppAssets.bHomeIcon),
+                                    ScreenUtil().setVerticalSpacing(2),
+                                    Text(
+                                      'Home',
+                                      style: TextStyle(fontSize: Sizes.s12.sp),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            ScreenUtil().setHorizontalSpacing(10),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  onTap(1);
+                                });
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                  top: Sizes.s26.h,
+                                  bottom: Sizes.s0.h,
+                                ),
+                                child: Column(
+                                  children: [
+                                    SvgPicture.asset(currentIndex == 1
+                                        ? AppAssets.bFillNotificationIcon
+                                        : AppAssets.bNotificationIcon),
+                                    ScreenUtil().setVerticalSpacing(3),
+                                    Text(
+                                      'Notification',
+                                      style: TextStyle(fontSize: Sizes.s12.sp),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            ScreenUtil().setHorizontalSpacing(10),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  //  onTap(2);
+                                });
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    top: Sizes.s32.h,
+                                    bottom: Sizes.s0.h,
+                                    right: Sizes.s15.w),
+                                child: Column(
+                                  children: [
+                                    Text(
+                                      '       Sell\nYour Property',
+                                      style: TextStyle(fontSize: Sizes.s12.sp),
+                                    ),
+                                    // Text('sell',textAlign: TextAlign.center,),
+                                    // Text('Your Property',textAlign: TextAlign.center,)
+                                  ],
+                                ),
+                              ),
+                            ),
+                            ScreenUtil().setHorizontalSpacing(10),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  onTap(2);
+                                });
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    top: Sizes.s28.h,
+                                    bottom: Sizes.s0.h,
+                                    right: Sizes.s10.w),
+                                child: Column(
+                                  children: [
+                                    SvgPicture.asset(currentIndex == 2
+                                        ? AppAssets.bFillSavedIcon
+                                        : AppAssets.bSavedIcon),
+                                    ScreenUtil().setVerticalSpacing(2),
+                                    Text(
+                                      'Saved',
+                                      style: TextStyle(fontSize: Sizes.s12.sp),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            ScreenUtil().setHorizontalSpacing(10),
+                            GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  onTap(3);
+                                });
+                              },
+                              child: Padding(
+                                padding: EdgeInsets.only(
+                                    top: Sizes.s28.h,
+                                    bottom: Sizes.s0.h,
+                                    right: Sizes.s15.w),
+                                child: Column(
+                                  children: [
+                                    SvgPicture.asset(currentIndex == 3
+                                        ? AppAssets.bFillProfileIcon
+                                        : AppAssets.bProfileIcon),
+                                    ScreenUtil().setVerticalSpacing(2),
+                                    Text(
+                                      'Profile',
+                                      style: TextStyle(fontSize: Sizes.s12.sp),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          );
+        },
+        // child: Scaffold(
+        //   extendBody: false,
+        //   body: pages[currentIndex],
+        //   floatingActionButtonLocation:
+        //       FloatingActionButtonLocation.miniCenterDocked,
+
+        //   floatingActionButton: FloatingActionButton(
+        //     backgroundColor: ThemeColors.themeColor,
+        //     onPressed: () {
+        //       Navigator.push(
+        //           context,
+        //           MaterialPageRoute(
+        //             builder: (context) => SellPersonContact(),
+        //           ));
+        //     },
+        //     child: const Icon(Icons.add),
+        //   ),
+        //   bottomNavigationBar: BottomAppBar(
+        //     color: ThemeColors.white,
+        //     height: Sizes.s70.h,
+        //     notchMargin: 5,
+        //     shape: const CircularNotchedRectangle(),
+        //     child: Row(
+        //       // mainAxisSize: MainAxisSize.max,
+        //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //       children: [
+        //         GestureDetector(
+        //           onTap: () {
+        //             setState(() {
+        //               onTap(0);
+        //             });
+        //           },
+        //           child: Padding(
+        //             padding: EdgeInsets.only(
+        //                 top: Sizes.s27.h,
+        //                 bottom: Sizes.s0.h,
+        //                 left: Sizes.s15.w),
+        //             child: Column(
+        //               children: [
+        //                 SvgPicture.asset(currentIndex == 0
+        //                     ? AppAssets.bFillHomeIcon
+        //                     : AppAssets.bHomeIcon),
+        //                 ScreenUtil().setVerticalSpacing(2),
+        //                 Text(
+        //                   'Home',
+        //                   style: TextStyle(fontSize: Sizes.s12.sp),
+        //                 )
+        //               ],
+        //             ),
+        //           ),
+        //         ),
+        //         ScreenUtil().setHorizontalSpacing(10),
+        //         GestureDetector(
+        //           onTap: () {
+        //             setState(() {
+        //               onTap(1);
+        //             });
+        //           },
+        //           child: Padding(
+        //             padding: EdgeInsets.only(
+        //               top: Sizes.s26.h,
+        //               bottom: Sizes.s0.h,
+        //             ),
+        //             child: Column(
+        //               children: [
+        //                 SvgPicture.asset(currentIndex == 1
+        //                     ? AppAssets.bFillNotificationIcon
+        //                     : AppAssets.bNotificationIcon),
+        //                 ScreenUtil().setVerticalSpacing(3),
+        //                 Text(
+        //                   'Notification',
+        //                   style: TextStyle(fontSize: Sizes.s12.sp),
+        //                 )
+        //               ],
+        //             ),
+        //           ),
+        //         ),
+        //         ScreenUtil().setHorizontalSpacing(10),
+        //         GestureDetector(
+        //           onTap: () {
+        //             setState(() {
+        //               //  onTap(2);
+        //             });
+        //           },
+        //           child: Padding(
+        //             padding: EdgeInsets.only(
+        //                 top: Sizes.s32.h,
+        //                 bottom: Sizes.s0.h,
+        //                 right: Sizes.s15.w),
+        //             child: Column(
+        //               children: [
+        //                 Text(
+        //                   '       Sell\nYour Property',
+        //                   style: TextStyle(fontSize: Sizes.s12.sp),
+        //                 ),
+        //                 // Text('sell',textAlign: TextAlign.center,),
+        //                 // Text('Your Property',textAlign: TextAlign.center,)
+        //               ],
+        //             ),
+        //           ),
+        //         ),
+        //         ScreenUtil().setHorizontalSpacing(10),
+        //         GestureDetector(
+        //           onTap: () {
+        //             setState(() {
+        //               onTap(2);
+        //             });
+        //           },
+        //           child: Padding(
+        //             padding: EdgeInsets.only(
+        //                 top: Sizes.s28.h,
+        //                 bottom: Sizes.s0.h,
+        //                 right: Sizes.s10.w),
+        //             child: Column(
+        //               children: [
+        //                 SvgPicture.asset(currentIndex == 2
+        //                     ? AppAssets.bFillSavedIcon
+        //                     : AppAssets.bSavedIcon),
+        //                 ScreenUtil().setVerticalSpacing(2),
+        //                 Text(
+        //                   'Saved',
+        //                   style: TextStyle(fontSize: Sizes.s12.sp),
+        //                 )
+        //               ],
+        //             ),
+        //           ),
+        //         ),
+        //         ScreenUtil().setHorizontalSpacing(10),
+        //         GestureDetector(
+        //           onTap: () {
+        //             setState(() {
+        //               onTap(3);
+        //             });
+        //           },
+        //           child: Padding(
+        //             padding: EdgeInsets.only(
+        //                 top: Sizes.s28.h,
+        //                 bottom: Sizes.s0.h,
+        //                 right: Sizes.s15.w),
+        //             child: Column(
+        //               children: [
+        //                 SvgPicture.asset(currentIndex == 3
+        //                     ? AppAssets.bFillProfileIcon
+        //                     : AppAssets.bProfileIcon),
+        //                 ScreenUtil().setVerticalSpacing(2),
+        //                 Text(
+        //                   'Profile',
+        //                   style: TextStyle(fontSize: Sizes.s12.sp),
+        //                 )
+        //               ],
+        //             ),
+        //           ),
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        //   // // // bottomNavigationBar: BottomNavigationBar(
+
+        //   //   backgroundColor: Colors.white,
+        //   //   onTap: onTap,
+        //   //   currentIndex: currentIndex,
+        //   //   showSelectedLabels: true,
+        //   //     items: [
+        //   //       BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home',backgroundColor: Colors.black),
+        //   //       BottomNavigationBarItem(icon: Icon(Icons.notifications),label: 'Notification'),
+        //   //       BottomNavigationBarItem(icon: Icon(Icons.notifications),label: 'Sell Your Property'),
+
+        //   //       BottomNavigationBarItem(icon: Icon(Icons.bookmark),label: 'Saved'),
+        //   //       BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Profile'),
+        //   //       ]),
+        // ),
+      ),
+    );
+  }
+}

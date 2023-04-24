@@ -17,7 +17,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors().bgColor,
+      backgroundColor: ThemeColors.bgColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                            color: ThemeColors().grey.withOpacity(0.5),
+                            color: ThemeColors.grey.withOpacity(0.5),
                             blurRadius: 10.0,
                             spreadRadius: 2.0,
                             offset: Offset(
@@ -42,14 +42,14 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                             ))
                       ],
                       borderRadius: BorderRadius.circular(Sizes.s12.r),
-                      color: ThemeColors().white),
+                      color: ThemeColors.white),
                   height: Sizes.s35.h,
                   width: Sizes.s35.w,
                   child: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: SvgPicture.asset(
                         AppAssets.backArrow,
-                        color: ThemeColors().black,
+                        color: ThemeColors.black,
                       )),
                 ),
               ),
@@ -72,7 +72,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                           padding: const EdgeInsets.symmetric(horizontal: 30.0),
                           child: Container(
                             decoration: BoxDecoration(
-                                color: ThemeColors().white,
+                                color: ThemeColors.white,
                                 borderRadius:
                                     BorderRadius.circular(Sizes.s15.r)),
                             height: Sizes.s265.h,
@@ -104,8 +104,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                               borderRadius:
                                                   BorderRadius.circular(
                                                       Sizes.s5.r),
-                                              color: ThemeColors()
-                                                  .white
+                                              color: ThemeColors.white
                                                   .withOpacity(0.5)),
                                           height: Sizes.s25.h,
                                           width: Sizes.s25.w,
@@ -114,7 +113,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                             child: Icon(
                                               CupertinoIcons.bookmark_fill,
                                               size: 15,
-                                              color: ThemeColors().white,
+                                              color: ThemeColors.white,
                                             ),
                                           ),
                                         ),
@@ -127,27 +126,29 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                   children: [
                                     ScreenUtil().setHorizontalSpacing(24.0),
                                     Flexible(
+                                      flex: 1,
                                       child: Text(
                                         '\$24,532',
                                         // 'Studio Apartment',
                                         maxLines: 2,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
-                                            color: ThemeColors().orange,
+                                            color: ThemeColors.orange,
                                             fontWeight: FontWeight.w700,
                                             fontSize: Sizes.s18.sp),
                                       ),
                                     ),
                                     ScreenUtil().setHorizontalSpacing(7),
-                                    Expanded(
+                                    Flexible(
+                                      flex: 2,
                                       child: Text(
-                                        'Studio Apartment',
+                                        'Studio Apartment ',
                                         maxLines: 1,
                                         overflow: TextOverflow.ellipsis,
                                         style: TextStyle(
                                             fontWeight: FontWeight.w700,
                                             fontSize: Sizes.s14.sp,
-                                            color: ThemeColors().textColor),
+                                            color: ThemeColors.textColor),
                                       ),
                                     ),
                                     ScreenUtil().setHorizontalSpacing(24.0)
@@ -174,7 +175,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w500,
-                                                      color: ThemeColors()
+                                                      color: ThemeColors
                                                           .textColor),
                                                   children: const [
                                                 TextSpan(text: '3'),
@@ -188,7 +189,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                             AppAssets.bathIcon,
                                             height: 18,
                                             width: 21,
-                                            color: ThemeColors().textColor,
+                                            color: ThemeColors.textColor,
                                           ),
                                           ScreenUtil().setVerticalSpacing(7),
                                           RichText(
@@ -196,7 +197,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w500,
-                                                      color: ThemeColors()
+                                                      color: ThemeColors
                                                           .textColor),
                                                   children: const [
                                                 TextSpan(text: '2'),
@@ -210,7 +211,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                             AppAssets.carIcon,
                                             height: 18,
                                             width: 21,
-                                            color: ThemeColors().textColor,
+                                            color: ThemeColors.textColor,
                                           ),
                                           ScreenUtil().setVerticalSpacing(7),
                                           RichText(
@@ -218,7 +219,7 @@ class _ViewApartmentListState extends State<ViewApartmentList> {
                                                   style: TextStyle(
                                                       fontWeight:
                                                           FontWeight.w500,
-                                                      color: ThemeColors()
+                                                      color: ThemeColors
                                                           .textColor),
                                                   children: const [
                                                 TextSpan(text: '2'),

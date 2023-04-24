@@ -43,7 +43,7 @@ class _ForgotPswMobileState extends State<ForgotPswMobile> {
                 Text(
                   'Enter your number',
                   style: TextStyle(
-                      color: ThemeColors().title,
+                      color: ThemeColors.title,
                       fontSize: Sizes.s28.sp,
                       fontWeight: FontWeight.w700),
                 ),
@@ -54,11 +54,11 @@ class _ForgotPswMobileState extends State<ForgotPswMobile> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Mobile number',
-                    style: TextStyle(color: ThemeColors().textColor),
+                    style: TextStyle(color: ThemeColors.textColor),
                   ),
                 ),
                 CtmTextFormFieldWithIcon(
-                    labelTextColor: ThemeColors().textColor,
+                    labelTextColor: ThemeColors.textColor,
                     prefixIcon: CtmSVGImage(
                       imageheight: Sizes.s17.h,
                       imagewidth: Sizes.s17.w,
@@ -66,17 +66,17 @@ class _ForgotPswMobileState extends State<ForgotPswMobile> {
                       width: Sizes.s30.w,
                     ),
                     hintText: 'Enter Phone Number',
-                    hintTextColor: ThemeColors().textColor,
+                    hintTextColor: ThemeColors.textColor,
                     controller: _phone),
                 SizedBox(
                   height: Sizes.s100.h,
                 ),
                 CtmElevatedButton(
-                    borderColor: ThemeColors().transparent,
+                    borderColor: ThemeColors.transparent,
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
                     width: MediaQuery.of(context).size.width,
-                    txtColor: ThemeColors().white,
+                    txtColor: ThemeColors.white,
                     text: 'Verify',
                     onPressed: () {
                       Navigator.push(

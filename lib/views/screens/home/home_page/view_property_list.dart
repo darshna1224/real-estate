@@ -17,7 +17,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors().bgColor,
+      backgroundColor: ThemeColors.bgColor,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,7 +33,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                   decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
-                            color: ThemeColors().grey.withOpacity(0.3),
+                            color: ThemeColors.grey.withOpacity(0.3),
                             blurRadius: 10.0,
                             spreadRadius: 2.0,
                             offset: Offset(
@@ -42,14 +42,14 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                             ))
                       ],
                       borderRadius: BorderRadius.circular(Sizes.s12.r),
-                      color: ThemeColors().white),
+                      color: ThemeColors.white),
                   height: Sizes.s35.h,
                   width: Sizes.s35.w,
                   child: Padding(
                       padding: const EdgeInsets.all(12.0),
                       child: SvgPicture.asset(
                         AppAssets.backArrow,
-                        color: ThemeColors().black,
+                        color: ThemeColors.black,
                       )),
                 ),
               ),
@@ -71,10 +71,10 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                           height: Sizes.s94.h,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(
-                              color: ThemeColors().white,
+                              color: ThemeColors.white,
                               boxShadow: [
                                 BoxShadow(
-                                    color: ThemeColors().grey.withOpacity(0.3),
+                                    color: ThemeColors.grey.withOpacity(0.3),
                                     blurRadius: 10.0,
                                     spreadRadius: 2.0,
                                     offset: const Offset(
@@ -94,8 +94,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                     decoration: BoxDecoration(
                                         boxShadow: [
                                           BoxShadow(
-                                              color: ThemeColors()
-                                                  .grey
+                                              color: ThemeColors.grey
                                                   .withOpacity(0.3),
                                               blurRadius: 10.0,
                                               spreadRadius: 1.5,
@@ -119,8 +118,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                       decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(Sizes.s5.r),
-                                          color: ThemeColors()
-                                              .white
+                                          color: ThemeColors.white
                                               .withOpacity(0.5)),
                                       height: Sizes.s19.h,
                                       width: Sizes.s19.w,
@@ -129,7 +127,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                         child: Icon(
                                           CupertinoIcons.bookmark_fill,
                                           size: 10,
-                                          color: ThemeColors().white,
+                                          color: ThemeColors.white,
                                         ),
                                       ),
                                     ),
@@ -166,7 +164,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                             style: TextStyle(
                                                 fontWeight: FontWeight.w700,
                                                 fontSize: Sizes.s14.sp,
-                                                color: ThemeColors().orange),
+                                                color: ThemeColors.orange),
                                           ),
                                         ),
                                         ScreenUtil().setHorizontalSpacing(18),
@@ -183,7 +181,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                           children: [
                                             SvgPicture.asset(
                                               AppAssets.bedIcon,
-                                              // color: ThemeColors()
+                                              // color: ThemeColors
                                               //     .textColor,
                                             ),
                                             RichText(
@@ -191,7 +189,7 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.w500,
-                                                        color: ThemeColors()
+                                                        color: ThemeColors
                                                             .textColor),
                                                     children: const [
                                                   TextSpan(text: '3'),
@@ -204,14 +202,14 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                           children: [
                                             SvgPicture.asset(
                                               AppAssets.bathIcon,
-                                              color: ThemeColors().textColor,
+                                              color: ThemeColors.textColor,
                                             ),
                                             RichText(
                                                 text: TextSpan(
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.w500,
-                                                        color: ThemeColors()
+                                                        color: ThemeColors
                                                             .textColor),
                                                     children: const [
                                                   TextSpan(text: '2'),
@@ -224,14 +222,14 @@ class _ViewPropertyListState extends State<ViewPropertyList> {
                                           children: [
                                             SvgPicture.asset(
                                               AppAssets.carIcon,
-                                              color: ThemeColors().textColor,
+                                              color: ThemeColors.textColor,
                                             ),
                                             RichText(
                                                 text: TextSpan(
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.w500,
-                                                        color: ThemeColors()
+                                                        color: ThemeColors
                                                             .textColor),
                                                     children: const [
                                                   TextSpan(text: '2'),

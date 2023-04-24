@@ -48,6 +48,10 @@ dependencies:
   syncfusion_flutter_sliders: ^21.1.39
   syncfusion_flutter_charts: ^21.1.39
   syncfusion_localizations: ^21.1.39
+  localization: ^2.1.0
+  get: ^4.6.5
+  provider: ^6.0.5
+  
 
 dev_dependencies:
   flutter_test:

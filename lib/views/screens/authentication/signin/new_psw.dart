@@ -42,14 +42,14 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                 Text(
                   'Enter Your',
                   style: TextStyle(
-                      color: ThemeColors().title,
+                      color: ThemeColors.title,
                       fontSize: Sizes.s25.sp,
                       fontWeight: FontWeight.w700),
                 ),
                 Text(
                   'New Password',
                   style: TextStyle(
-                      color: ThemeColors().title,
+                      color: ThemeColors.title,
                       fontSize: Sizes.s25.sp,
                       fontWeight: FontWeight.w700),
                 ),
@@ -60,12 +60,12 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Password',
-                    style: TextStyle(color: ThemeColors().textColor),
+                    style: TextStyle(color: ThemeColors.textColor),
                   ),
                 ),
                 CtmTextFormFieldWithIcon(
                     keyboardType: TextInputType.visiblePassword,
-                    labelTextColor: ThemeColors().textColor,
+                    labelTextColor: ThemeColors.textColor,
                     suffixIcon: IconButton(
                         onPressed: () {},
                         icon: CtmSVGImage(
@@ -82,7 +82,7 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                       width: Sizes.s30.w,
                     ),
                     hintText: 'Enter Password',
-                    hintTextColor: ThemeColors().textColor,
+                    hintTextColor: ThemeColors.textColor,
                     controller: _password),
                 SizedBox(
                   height: Sizes.s30.h,
@@ -91,12 +91,12 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Confirm New Password',
-                    style: TextStyle(color: ThemeColors().textColor),
+                    style: TextStyle(color: ThemeColors.textColor),
                   ),
                 ),
                 CtmTextFormFieldWithIcon(
                     keyboardType: TextInputType.visiblePassword,
-                    labelTextColor: ThemeColors().textColor,
+                    labelTextColor: ThemeColors.textColor,
                     suffixIcon: IconButton(
                         onPressed: () {},
                         icon: CtmSVGImage(
@@ -113,18 +113,18 @@ class _ForgotPswNewState extends State<ForgotPswNew> {
                       width: Sizes.s30.w,
                     ),
                     hintText: 'Enter Confirm New Password',
-                    hintTextColor: ThemeColors().textColor,
+                    hintTextColor: ThemeColors.textColor,
                     controller: _confirmpassword),
                 SizedBox(
                   height: Sizes.s80.h,
                 ),
                 CtmElevatedButton(
-                    borderColor: ThemeColors().transparent,
+                    borderColor: ThemeColors.transparent,
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
                     width: MediaQuery.of(context).size.width,
-                    btnColor: ThemeColors().themeColor,
-                    txtColor: ThemeColors().white,
+                    btnColor: ThemeColors.themeColor,
+                    txtColor: ThemeColors.white,
                     text: 'Submit',
                     onPressed: () {
                       Navigator.push(

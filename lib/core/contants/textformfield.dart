@@ -18,6 +18,7 @@ class CtmTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final double? hintFontSize;
   final FontWeight? hintFontWeight;
+  final String? Function(String?)? validator;
 
   const CtmTextFormField({
     super.key,
@@ -36,25 +37,27 @@ class CtmTextFormField extends StatelessWidget {
     this.hintText,
     this.hintFontSize,
     this.hintFontWeight,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       focusNode: focusNode,
       autofocus: autofocus ?? false,
       onChanged: onChanged,
       onFieldSubmitted: onFieldSubmitted,
       controller: controller,
       keyboardType: keyboardType,
-      cursorColor: ThemeColors().themeColor,
+      cursorColor: ThemeColors.themeColor,
       style: TextStyle(
-          color: textColor ?? ThemeColors().title,
+          color: textColor ?? ThemeColors.title,
           fontSize: fontSize ?? Sizes.s16.sp,
           fontWeight: fontWeight ?? FontWeight.w600),
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: ThemeColors().themeColor)),
+            borderSide: BorderSide(color: ThemeColors.themeColor)),
         labelText: labelText,
         labelStyle: TextStyle(color: labelTextColor, fontSize: Sizes.s15.sp),
         hintText: hintText,

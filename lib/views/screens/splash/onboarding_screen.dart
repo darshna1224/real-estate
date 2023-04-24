@@ -119,7 +119,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   dotHeight: 6),
             ),
             CtmElevatedButton(
-              borderColor: ThemeColors().transparent,
+              borderColor: ThemeColors.transparent,
               text: 'Next',
               fontSize: Sizes.s19.sp,
               fontWeight: FontWeight.w700,
@@ -137,7 +137,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               },
               margin: EdgeInsets.fromLTRB(
                   Sizes.s22.w, Sizes.s19.h, Sizes.s22.w, Sizes.s19.h),
-              txtColor: ThemeColors().white,
+              txtColor: ThemeColors.white,
             ),
           ],
         ),

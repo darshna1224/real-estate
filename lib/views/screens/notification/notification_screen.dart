@@ -46,7 +46,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                     'Notification',
                     style: TextStyle(
                       fontSize: Sizes.s23.sp,
-                      color: ThemeColors().black,
+                      color: ThemeColors.black,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -68,7 +68,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                           style: TextStyle(
                               fontSize: Sizes.s20.sp,
                               fontWeight: FontWeight.w600,
-                              color: ThemeColors().title),
+                              color: ThemeColors.title),
                         ),
                       ),
                       ScreenUtil().setVerticalSpacing(20),
@@ -130,7 +130,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                               height: Sizes.s7.h,
                                               width: Sizes.s7.w,
                                               decoration: BoxDecoration(
-                                                  color: ThemeColors().orange,
+                                                  color: ThemeColors.orange,
                                                   shape: BoxShape.circle),
                                             )
                                           ],

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_utils/flutter_utils.dart';
@@ -58,7 +57,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                             decoration: BoxDecoration(
                                 borderRadius:
                                     BorderRadius.circular(Sizes.s12.r),
-                                color: ThemeColors().white.withOpacity(0.5)),
+                                color: ThemeColors.white.withOpacity(0.5)),
                             height: Sizes.s35.h,
                             width: Sizes.s35.w,
                             child: Padding(
@@ -69,7 +68,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                         Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(Sizes.s12.r),
-                              color: ThemeColors().white.withOpacity(0.5)),
+                              color: ThemeColors.white.withOpacity(0.5)),
                           height: Sizes.s35.h,
                           width: Sizes.s35.w,
                           child: Padding(
@@ -89,7 +88,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                   style: TextStyle(
                       fontSize: Sizes.s23.sp,
                       fontWeight: FontWeight.w700,
-                      color: ThemeColors().title),
+                      color: ThemeColors.title),
                 ),
               ),
               ScreenUtil().setVerticalSpacing(26),
@@ -100,7 +99,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                   style: TextStyle(
                       fontSize: Sizes.s18.sp,
                       fontWeight: FontWeight.w700,
-                      color: ThemeColors().title),
+                      color: ThemeColors.title),
                 ),
               ),
               ScreenUtil().setVerticalSpacing(26),
@@ -114,7 +113,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                         Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(Sizes.s12.r),
-                              color: ThemeColors().orange.withOpacity(0.1)),
+                              color: ThemeColors.orange.withOpacity(0.1)),
                           height: Sizes.s35.h,
                           width: Sizes.s35.w,
                           child: Padding(
@@ -127,8 +126,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                         ScreenUtil().setVerticalSpacing(12),
                         RichText(
                             text: TextSpan(
-                                style:
-                                    TextStyle(color: ThemeColors().textColor),
+                                style: TextStyle(color: ThemeColors.textColor),
                                 children: const [
                               TextSpan(text: '3'),
                               TextSpan(text: ' Bed'),
@@ -138,28 +136,27 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                     Container(
                       height: 80,
                       width: 1,
-                      color: ThemeColors().black.withOpacity(0.5),
+                      color: ThemeColors.black.withOpacity(0.5),
                     ),
                     Column(
                       children: [
                         Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(Sizes.s12.r),
-                              color: ThemeColors().orange.withOpacity(0.1)),
+                              color: ThemeColors.orange.withOpacity(0.1)),
                           height: Sizes.s35.h,
                           width: Sizes.s35.w,
                           child: Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: SvgPicture.asset(
                                 AppAssets.bathIcon,
-                                color: ThemeColors().orange,
+                                color: ThemeColors.orange,
                               )),
                         ),
                         ScreenUtil().setVerticalSpacing(12),
                         RichText(
                             text: TextSpan(
-                                style:
-                                    TextStyle(color: ThemeColors().textColor),
+                                style: TextStyle(color: ThemeColors.textColor),
                                 children: const [
                               TextSpan(text: '2'),
                               TextSpan(text: ' Bath'),
@@ -169,28 +166,27 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                     Container(
                       height: 80,
                       width: 1,
-                      color: ThemeColors().black.withOpacity(0.5),
+                      color: ThemeColors.black.withOpacity(0.5),
                     ),
                     Column(
                       children: [
                         Container(
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(Sizes.s12.r),
-                              color: ThemeColors().orange.withOpacity(0.1)),
+                              color: ThemeColors.orange.withOpacity(0.1)),
                           height: Sizes.s35.h,
                           width: Sizes.s35.w,
                           child: Padding(
                               padding: const EdgeInsets.all(12.0),
                               child: SvgPicture.asset(
                                 AppAssets.carIcon,
-                                color: ThemeColors().orange,
+                                color: ThemeColors.orange,
                               )),
                         ),
                         ScreenUtil().setVerticalSpacing(12),
                         RichText(
                             text: TextSpan(
-                                style:
-                                    TextStyle(color: ThemeColors().textColor),
+                                style: TextStyle(color: ThemeColors.textColor),
                                 children: const [
                               TextSpan(text: '2'),
                               TextSpan(text: ' Parking'),
@@ -208,7 +204,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                   style: TextStyle(
                       fontSize: Sizes.s18.sp,
                       fontWeight: FontWeight.w700,
-                      color: ThemeColors().title),
+                      color: ThemeColors.title),
                 ),
               ),
               ScreenUtil().setVerticalSpacing(15),
@@ -230,7 +226,7 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                             borderRadius: BorderRadius.circular(Sizes.s15.r),
                             child: Container(
                                 decoration: BoxDecoration(
-                                  color: ThemeColors().white,
+                                  color: ThemeColors.white,
                                 ),
                                 height: Sizes.s135.h,
                                 width: Sizes.s100.w,
@@ -259,10 +255,10 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                           style: TextStyle(
                               fontSize: Sizes.s16.sp,
                               fontWeight: FontWeight.w600,
-                              color: ThemeColors().price),
+                              color: ThemeColors.price),
                         ),
                         ScreenUtil().setVerticalSpacing(6),
-                        Container(
+                        SizedBox(
                           // color: Colors.blue,
                           width: MediaQuery.of(context).size.width * 0.4,
                           child: Flexible(
@@ -273,17 +269,17 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
                               style: TextStyle(
                                   fontWeight: FontWeight.w700,
                                   fontSize: Sizes.s22.sp,
-                                  color: ThemeColors().orange),
+                                  color: ThemeColors.orange),
                             ),
                           ),
                         )
                       ],
                     ),
-                    Expanded(
+                    Flexible(
                       child: CtmElevatedButton(
-                        borderColor: ThemeColors().transparent,
+                        borderColor: ThemeColors.transparent,
                         width: Sizes.s160.w,
-                        txtColor: ThemeColors().white,
+                        txtColor: ThemeColors.white,
                         fontSize: Sizes.s19.sp,
                         fontWeight: FontWeight.w700,
                         text: 'Call US',
@@ -341,11 +337,11 @@ class _DetailApartmentScreenState extends State<DetailApartmentScreen> {
             width: Sizes.s83.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: ThemeColors().themeColor),
+                color: ThemeColors.themeColor),
             child: Center(
               child: CtmTextButton(
                 text: 'Ok',
-                fontcolor: ThemeColors().white,
+                fontcolor: ThemeColors.white,
                 fontSize: Sizes.s16,
                 onTap: () {
                   Navigator.of(context).pop();

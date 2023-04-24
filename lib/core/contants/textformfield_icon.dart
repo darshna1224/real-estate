@@ -15,6 +15,7 @@ class CtmTextFormFieldWithIcon extends StatelessWidget {
   final bool? autofocus;
   final FocusNode? focusNode;
   final TextInputType? keyboardType;
+  final String? Function(String?)? validator;
 
   const CtmTextFormFieldWithIcon({
     super.key,
@@ -30,21 +31,23 @@ class CtmTextFormFieldWithIcon extends StatelessWidget {
     this.suffixIcon,
     this.labelText,
     this.hintText,
+    this.validator,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: validator,
       focusNode: focusNode,
       autofocus: autofocus ?? false,
       onChanged: onChanged,
       onFieldSubmitted: onFieldSubmitted,
       controller: controller,
       keyboardType: keyboardType,
-      cursorColor: ThemeColors().themeColor,
+      cursorColor: ThemeColors.themeColor,
       decoration: InputDecoration(
         focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: ThemeColors().themeColor)),
+            borderSide: BorderSide(color: ThemeColors.themeColor)),
         suffixIcon: suffixIcon,
         prefixIcon: Padding(
             padding: const EdgeInsets.only(right: 8.0), child: prefixIcon),

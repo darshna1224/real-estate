@@ -34,12 +34,12 @@ class _SellPersonContactState extends State<SellPersonContact> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Name',
-                    style: TextStyle(color: ThemeColors().textColor),
+                    style: TextStyle(color: ThemeColors.textColor),
                   ),
                 ),
                 CtmTextFormFieldWithIcon(
                   keyboardType: TextInputType.name,
-                  labelTextColor: ThemeColors().textColor,
+                  labelTextColor: ThemeColors.textColor,
                   prefixIcon: CtmSVGImage(
                     imageheight: Sizes.s17.h,
                     imagewidth: Sizes.s17.w,
@@ -48,7 +48,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     height: Sizes.s20.h,
                   ),
                   hintText: 'Enter your name',
-                  hintTextColor: ThemeColors().textColor,
+                  hintTextColor: ThemeColors.textColor,
                   // controller: _phone
                 ),
                 ScreenUtil().setVerticalSpacing(30),
@@ -56,12 +56,12 @@ class _SellPersonContactState extends State<SellPersonContact> {
                   alignment: Alignment.centerLeft,
                   child: Text(
                     'Mobile number',
-                    style: TextStyle(color: ThemeColors().textColor),
+                    style: TextStyle(color: ThemeColors.textColor),
                   ),
                 ),
                 CtmTextFormFieldWithIcon(
                   keyboardType: TextInputType.phone,
-                  labelTextColor: ThemeColors().textColor,
+                  labelTextColor: ThemeColors.textColor,
                   prefixIcon: CtmSVGImage(
                     imageheight: Sizes.s16.h,
                     imagewidth: Sizes.s16.w,
@@ -69,7 +69,7 @@ class _SellPersonContactState extends State<SellPersonContact> {
                     width: Sizes.s30.w,
                   ),
                   hintText: 'Enter mobile number',
-                  hintTextColor: ThemeColors().textColor,
+                  hintTextColor: ThemeColors.textColor,
                   // controller: _email
                 ),
                 ScreenUtil().setVerticalSpacing(30),
@@ -77,15 +77,15 @@ class _SellPersonContactState extends State<SellPersonContact> {
                   children: [
                     Text(
                       'Number of Properties',
-                      style: TextStyle(color: ThemeColors().textColor),
+                      style: TextStyle(color: ThemeColors.textColor),
                     ),
                     ScreenUtil().setHorizontalSpacing(15),
                     Flexible(
                       child: CtmTextFormFieldWithIcon(
                         keyboardType: TextInputType.phone,
-                        labelTextColor: ThemeColors().textColor,
+                        labelTextColor: ThemeColors.textColor,
 
-                        hintTextColor: ThemeColors().textColor,
+                        hintTextColor: ThemeColors.textColor,
                         // controller: _email
                       ),
                     ),
@@ -93,11 +93,11 @@ class _SellPersonContactState extends State<SellPersonContact> {
                 ),
                 ScreenUtil().setVerticalSpacing(50),
                 CtmElevatedButton(
-                    borderColor: ThemeColors().transparent,
+                    borderColor: ThemeColors.transparent,
                     fontWeight: FontWeight.w700,
                     fontSize: Sizes.s20.sp,
                     width: MediaQuery.of(context).size.width,
-                    txtColor: ThemeColors().white,
+                    txtColor: ThemeColors.white,
                     text: 'Submit',
                     onPressed: () {
                       showDialog(
@@ -147,11 +147,11 @@ class _SellPersonContactState extends State<SellPersonContact> {
             width: Sizes.s83.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: ThemeColors().themeColor),
+                color: ThemeColors.themeColor),
             child: Center(
               child: CtmTextButton(
                 text: 'Ok',
-                fontcolor: ThemeColors().white,
+                fontcolor: ThemeColors.white,
                 fontSize: Sizes.s16,
                 onTap: () {
                   Navigator.of(context).pop();

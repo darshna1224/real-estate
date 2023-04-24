@@ -45,7 +45,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
               child: Text(
                 'Property title',
                 style: TextStyle(
-                  color: ThemeColors().title,
+                  color: ThemeColors.title,
                   fontSize: Sizes.s15.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -65,7 +65,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
               child: Text(
                 'Property type',
                 style: TextStyle(
-                  color: ThemeColors().title,
+                  color: ThemeColors.title,
                   fontSize: Sizes.s15.sp,
                   fontWeight: FontWeight.w600,
                 ),
@@ -78,7 +78,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                 child: DropdownButton(
                     isExpanded: true,
                     style: TextStyle(
-                        color: ThemeColors().textColor,
+                        color: ThemeColors.textColor,
                         fontSize: Sizes.s15.sp,
                         fontWeight: FontWeight.w500,
                         fontFamily: 'Karla'),
@@ -103,7 +103,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       child: Text(
                         'Bathrooms',
                         style: TextStyle(
-                          color: ThemeColors().title,
+                          color: ThemeColors.title,
                           fontSize: Sizes.s15.sp,
                           fontWeight: FontWeight.w600,
                         ),
@@ -112,14 +112,14 @@ class _OverviewScreenState extends State<OverviewScreen> {
                     DropdownButton(
                       isExpanded: true,
                       style: TextStyle(
-                          color: ThemeColors().textColor,
+                          color: ThemeColors.textColor,
                           fontSize: Sizes.s14.sp,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'Karla'),
                       hint: Text(
                         'Select',
                         style: TextStyle(
-                            color: ThemeColors().textColor,
+                            color: ThemeColors.textColor,
                             fontSize: Sizes.s15.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'Karla'),
@@ -148,7 +148,7 @@ class _OverviewScreenState extends State<OverviewScreen> {
                       child: Text(
                         'Bathrooms',
                         style: TextStyle(
-                          color: ThemeColors().title,
+                          color: ThemeColors.title,
                           fontSize: Sizes.s15.sp,
                           fontWeight: FontWeight.w600,
                         ),
@@ -157,14 +157,14 @@ class _OverviewScreenState extends State<OverviewScreen> {
                     DropdownButton(
                       isExpanded: true,
                       style: TextStyle(
-                          color: ThemeColors().textColor,
+                          color: ThemeColors.textColor,
                           fontSize: Sizes.s15.sp,
                           fontWeight: FontWeight.w500,
                           fontFamily: 'Karla'),
                       hint: Text(
                         'Select',
                         style: TextStyle(
-                            color: ThemeColors().textColor,
+                            color: ThemeColors.textColor,
                             fontSize: Sizes.s15.sp,
                             fontWeight: FontWeight.w500,
                             fontFamily: 'Karla'),

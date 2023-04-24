@@ -39,4 +39,16 @@ class AppAssets {
   static const String backArrow = 'assets/images/icons/backArrow.svg';
   static const String bookMarkIcon = 'assets/images/icons/bookmarkIcon.svg';
   static const String cameraIcon = 'assets/images/icons/cameraIcon.svg';
+  static const String logoutIcon = 'assets/images/image/logoutIcon.svg';
+  static const String mypropertyIcon = 'assets/images/image/mypropertyIcon.svg';
+  static const String privacypoliceIcon =
+      'assets/images/image/privacypoliceIcon.svg';
+  static const String myfavoriteIcon = 'assets/images/image/myfavoriteIcon.svg';
+  static const String apartmentIcon = 'assets/images/icons/apartmentIcon.svg';
+  static const String villaIcon = 'assets/images/icons/villaIcon.svg';
+  static const String townhouseIcon = 'assets/images/icons/townhouseIcon.svg';
+  static const String hotelApartmentIcon =
+      'assets/images/icons/hotelApartmentIcon.svg';
+  static const String penthouseIcon = 'assets/images/icons/penthouseIcon.svg';
+  static const String duplexIcon = 'assets/images/icons/duplexIcon.svg';
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_utils/flutter_utils.dart';
 import 'package:real_estate/core/utils/colors.dart';
 
 class CtmElevatedButton extends StatelessWidget {
@@ -52,7 +51,7 @@ class CtmElevatedButton extends StatelessWidget {
                   color: borderColor,
                 ),
                 borderRadius: BorderRadius.circular(radius ?? 15)),
-            backgroundColor: btnColor ?? ThemeColors().themeColor,
+            backgroundColor: btnColor ?? ThemeColors.themeColor,
             fixedSize: Size(width ?? size.width, height ?? 63)),
         onPressed: onPressed,
         child: Text(

@@ -3,11 +3,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_utils/flutter_utils.dart';
+import 'package:get/get.dart';
 import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
-import 'package:real_estate/views/screens/home/detailapatment_sccreen.dart';
+import 'package:real_estate/models/bottombarview_model.dart';
+import 'package:real_estate/views/screens/home/detailapartment_sccreen.dart';
 import 'package:real_estate/views/screens/home/filter.dart';
 import 'package:real_estate/views/screens/home/home_page/view_apartment_list.dart';
 import 'package:real_estate/views/screens/home/home_page/view_property_list.dart';
@@ -21,6 +23,7 @@ class MenuDashBoardPage extends StatefulWidget {
 
 class _MenuDashBoardPageState extends State<MenuDashBoardPage>
     with TickerProviderStateMixin {
+  final _bottomBarViewModel = Get.find<BottomBarViewModel>();
   bool openDrawer = true;
   final Duration duration = const Duration(milliseconds: 300);
   late AnimationController _controller;
@@ -29,7 +32,7 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
   @override
   void initState() {
     _controller = AnimationController(vsync: this, duration: duration);
-    _Scaleanimation = Tween<double>(begin: 1, end: 0.6).animate(_controller);
+    _Scaleanimation = Tween<double>(begin: 1, end: 0.8).animate(_controller);
     super.initState();
   }
 
@@ -43,6 +46,8 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
       ),
     );
   }
+
+  bool selected = true;
 
   Widget menu(context) {
     return Column(
@@ -70,7 +75,7 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
                     'Johan Roy',
                     style: TextStyle(
                       fontSize: Sizes.s20.sp,
-                      color: ThemeColors().title,
+                      color: ThemeColors.title,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -78,7 +83,7 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
                     'Johanroy@gmail.com',
                     style: TextStyle(
                       fontSize: Sizes.s15.sp,
-                      color: ThemeColors().textColor,
+                      color: ThemeColors.textColor,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -97,7 +102,13 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
           ),
         ),
         ListTile(
-          leading: SvgPicture.asset(AppAssets.nameIcon),
+          selected: selected,
+          selectedTileColor: ThemeColors.orange,
+          selectedColor: ThemeColors.white,
+          // iconColor:
+          //     selected == true ? ThemeColors.white : ThemeColors.textColor,
+          leading: SvgPicture.asset(AppAssets.bSavedIcon,
+              color: selected ? ThemeColors.white : ThemeColors.textColor),
           title: Text(
             'My Favorite',
             style:
@@ -113,7 +124,7 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
           ),
         ),
         ListTile(
-          leading: SvgPicture.asset(AppAssets.nameIcon),
+          leading: SvgPicture.asset(AppAssets.mypropertyIcon),
           title: Text(
             'My Properties ',
             style:
@@ -121,15 +132,15 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
           ),
         ),
         ListTile(
-          leading: SvgPicture.asset(AppAssets.nameIcon),
+          leading: SvgPicture.asset(AppAssets.bNotificationIcon),
           title: Text(
-            'Notofication',
+            'Notification',
             style:
                 TextStyle(fontSize: Sizes.s15.sp, fontWeight: FontWeight.w400),
           ),
         ),
         ListTile(
-          leading: SvgPicture.asset(AppAssets.nameIcon),
+          leading: SvgPicture.asset(AppAssets.privacypoliceIcon),
           title: Text(
             'Privacy Police',
             style:
@@ -137,7 +148,7 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
           ),
         ),
         ListTile(
-          leading: SvgPicture.asset(AppAssets.nameIcon),
+          leading: SvgPicture.asset(AppAssets.logoutIcon),
           title: Text(
             'Log Out',
             style:
@@ -166,10 +177,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
   @override
   void initState() {
     _controller = AnimationController(vsync: this, duration: duration);
-    _Scaleanimation = Tween<double>(begin: 1, end: 0.6).animate(_controller);
+    _Scaleanimation = Tween<double>(begin: 1, end: 0.8).animate(_controller);
     super.initState();
   }
 
+  final _bottomBarViewModel = Get.find<BottomBarViewModel>();
   int currentImage = 0;
   List<String> listPaths = [
     'assets/images/image/Sunset-Quotes.jpg',
@@ -209,14 +221,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                       children: [
                         IconButton(
                           onPressed: () {
-                            setState(() {
-                              if (openDrawer) {
-                                _controller.forward();
-                              } else {
-                                _controller.reverse();
-                              }
-                              openDrawer = !openDrawer;
-                            });
+                            _bottomBarViewModel.setIsDrawerVisible();
+                            // setState(() {
+                            //   if (openDrawer) {
+                            //     _controller.forward();
+                            //   } else {
+                            //     _controller.reverse();
+                            //   }
+                            //   openDrawer = !openDrawer;
+                            // });
                           },
                           icon: const Icon(
                               CupertinoIcons.line_horizontal_3_decrease),
@@ -251,11 +264,11 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           TextSpan(
                               text: 'Your Dream ',
                               style: TextStyle(
-                                  color: ThemeColors().textColor,
+                                  color: ThemeColors.textColor,
                                   fontWeight: FontWeight.w700)),
                           TextSpan(
                               text: ' Home',
-                              style: TextStyle(color: ThemeColors().orange)),
+                              style: TextStyle(color: ThemeColors.orange)),
                         ],
                       ),
                     ),
@@ -280,7 +293,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     // name = val;
                                   });
                                 },
-                                cursorColor: ThemeColors().themeColor,
+                                cursorColor: ThemeColors.themeColor,
                                 decoration: InputDecoration(
                                     border: InputBorder.none,
                                     hintText: ' Area, create search',
@@ -290,7 +303,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                         fontSize: Sizes.s13.sp),
                                     prefixIcon: Icon(
                                       CupertinoIcons.search,
-                                      color: ThemeColors().textColor,
+                                      color: ThemeColors.textColor,
                                     )),
                               ),
                             ),
@@ -310,7 +323,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             width: Sizes.s48.w,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
-                                color: ThemeColors().orange),
+                                color: ThemeColors.orange),
                             child: Padding(
                               padding: const EdgeInsets.all(16.0),
                               child: SvgPicture.asset(
@@ -364,8 +377,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                                 color: currentImage == index
-                                    ? ThemeColors().orange
-                                    : ThemeColors().lightOrange,
+                                    ? ThemeColors.orange
+                                    : ThemeColors.lightOrange,
                               ),
                             );
                           }).toList(),
@@ -388,18 +401,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     text: 'Apartments',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        color: ThemeColors().black),
+                                        color: ThemeColors.black),
                                   ),
                                   TextSpan(
                                     text: ' (364)',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w500,
-                                        color: ThemeColors().orange),
+                                        color: ThemeColors.orange),
                                   )
                                 ])),
                             CtmTextButton(
                               text: 'View all',
-                              fontcolor: ThemeColors().orange,
+                              fontcolor: ThemeColors.orange,
                               fontSize: Sizes.s12.sp,
                               fontWeight: FontWeight.w700,
                               onTap: () {
@@ -437,7 +450,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   },
                                   child: Container(
                                     decoration: BoxDecoration(
-                                        color: ThemeColors().white,
+                                        color: ThemeColors.white,
                                         borderRadius:
                                             BorderRadius.circular(Sizes.s15.r)),
                                     height: Sizes.s265.h,
@@ -474,8 +487,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                             BorderRadius
                                                                 .circular(
                                                                     Sizes.s5.r),
-                                                        color: ThemeColors()
-                                                            .white
+                                                        color: ThemeColors.white
                                                             .withOpacity(0.5)),
                                                     height: Sizes.s19.h,
                                                     width: Sizes.s19.w,
@@ -488,7 +500,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                             .bookmark_fill,
                                                         size: 10,
                                                         color:
-                                                            ThemeColors().white,
+                                                            ThemeColors.white,
                                                       ),
                                                     ),
                                                   ),
@@ -525,7 +537,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                           FontWeight.w700,
                                                       fontSize: Sizes.s14.sp,
                                                       color:
-                                                          ThemeColors().orange),
+                                                          ThemeColors.orange),
                                                 ),
                                               )
                                             ],
@@ -539,7 +551,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                 children: [
                                                   SvgPicture.asset(
                                                     AppAssets.bedIcon,
-                                                    // color: ThemeColors().textColor,
+                                                    // color: ThemeColors.textColor,
                                                   ),
                                                   RichText(
                                                       text: TextSpan(
@@ -547,7 +559,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
-                                                              color: ThemeColors()
+                                                              color: ThemeColors
                                                                   .textColor),
                                                           children: const [
                                                         TextSpan(text: '3'),
@@ -560,7 +572,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   SvgPicture.asset(
                                                     AppAssets.bathIcon,
                                                     color:
-                                                        ThemeColors().textColor,
+                                                        ThemeColors.textColor,
                                                   ),
                                                   RichText(
                                                       text: TextSpan(
@@ -568,7 +580,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
-                                                              color: ThemeColors()
+                                                              color: ThemeColors
                                                                   .textColor),
                                                           children: const [
                                                         TextSpan(text: '2'),
@@ -581,7 +593,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   SvgPicture.asset(
                                                     AppAssets.carIcon,
                                                     color:
-                                                        ThemeColors().textColor,
+                                                        ThemeColors.textColor,
                                                   ),
                                                   RichText(
                                                       text: TextSpan(
@@ -589,7 +601,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
-                                                              color: ThemeColors()
+                                                              color: ThemeColors
                                                                   .textColor),
                                                           children: const [
                                                         TextSpan(text: '2'),
@@ -624,18 +636,18 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     text: 'Villa',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w700,
-                                        color: ThemeColors().black),
+                                        color: ThemeColors.black),
                                   ),
                                   TextSpan(
                                     text: ' (232)',
                                     style: TextStyle(
                                         fontWeight: FontWeight.w500,
-                                        color: ThemeColors().orange),
+                                        color: ThemeColors.orange),
                                   )
                                 ])),
                             CtmTextButton(
                               text: 'View all',
-                              fontcolor: ThemeColors().orange,
+                              fontcolor: ThemeColors.orange,
                               fontSize: Sizes.s12.sp,
                               fontWeight: FontWeight.w700,
                               onTap: () {
@@ -668,7 +680,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                     height: Sizes.s103.h,
                                     width: Sizes.s280.w,
                                     decoration: BoxDecoration(
-                                        color: ThemeColors().white,
+                                        color: ThemeColors.white,
                                         borderRadius:
                                             BorderRadius.circular(Sizes.s15.r)),
                                     child: Row(
@@ -698,8 +710,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             Sizes.s5.r),
-                                                    color: ThemeColors()
-                                                        .white
+                                                    color: ThemeColors.white
                                                         .withOpacity(0.5)),
                                                 height: Sizes.s19.h,
                                                 width: Sizes.s19.w,
@@ -710,7 +721,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                     CupertinoIcons
                                                         .bookmark_fill,
                                                     size: 10,
-                                                    color: ThemeColors().white,
+                                                    color: ThemeColors.white,
                                                   ),
                                                 ),
                                               ),
@@ -741,7 +752,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   children: [
                                                     SvgPicture.asset(
                                                       AppAssets.bedIcon,
-                                                      // color: ThemeColors()
+                                                      // color: ThemeColors
                                                       //     .textColor,
                                                     ),
                                                     RichText(
@@ -750,7 +761,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                color: ThemeColors()
+                                                                color: ThemeColors
                                                                     .textColor),
                                                             children: const [
                                                           TextSpan(text: '3'),
@@ -765,8 +776,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   children: [
                                                     SvgPicture.asset(
                                                       AppAssets.bathIcon,
-                                                      color: ThemeColors()
-                                                          .textColor,
+                                                      color:
+                                                          ThemeColors.textColor,
                                                     ),
                                                     RichText(
                                                         text: TextSpan(
@@ -774,7 +785,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                color: ThemeColors()
+                                                                color: ThemeColors
                                                                     .textColor),
                                                             children: const [
                                                           TextSpan(text: '2'),
@@ -789,8 +800,8 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                   children: [
                                                     SvgPicture.asset(
                                                       AppAssets.carIcon,
-                                                      color: ThemeColors()
-                                                          .textColor,
+                                                      color:
+                                                          ThemeColors.textColor,
                                                     ),
                                                     RichText(
                                                         text: TextSpan(
@@ -798,7 +809,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
-                                                                color: ThemeColors()
+                                                                color: ThemeColors
                                                                     .textColor),
                                                             children: const [
                                                           TextSpan(text: '2'),
@@ -818,8 +829,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                                 style: TextStyle(
                                                     fontWeight: FontWeight.w700,
                                                     fontSize: Sizes.s14.sp,
-                                                    color:
-                                                        ThemeColors().orange),
+                                                    color: ThemeColors.orange),
                                               ),
                                             )
                                           ],

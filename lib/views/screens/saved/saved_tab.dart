@@ -17,7 +17,7 @@ class _SavedScreenState extends State<SavedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ThemeColors().bgColor,
+      backgroundColor: ThemeColors.bgColor,
       body: SafeArea(
         child: Column(
           children: [
@@ -25,7 +25,7 @@ class _SavedScreenState extends State<SavedScreen> {
             Text(
               'Saved',
               style: TextStyle(
-                  color: ThemeColors().black,
+                  color: ThemeColors.black,
                   fontSize: Sizes.s25.sp,
                   fontWeight: FontWeight.w600),
             ),
@@ -45,7 +45,7 @@ class _SavedScreenState extends State<SavedScreen> {
                         // name = val;
                       });
                     },
-                    cursorColor: ThemeColors().themeColor,
+                    cursorColor: ThemeColors.themeColor,
                     decoration: InputDecoration(
                         border: InputBorder.none,
                         hintText: ' Search your..',
@@ -55,7 +55,7 @@ class _SavedScreenState extends State<SavedScreen> {
                             fontSize: Sizes.s13.sp),
                         prefixIcon: Icon(
                           CupertinoIcons.search,
-                          color: ThemeColors().textColor,
+                          color: ThemeColors.textColor,
                         )),
                   ),
                 ),
@@ -81,11 +81,10 @@ class _SavedScreenState extends State<SavedScreen> {
                             height: Sizes.s94.h,
                             width: MediaQuery.of(context).size.width,
                             decoration: BoxDecoration(
-                                color: ThemeColors().white,
+                                color: ThemeColors.white,
                                 boxShadow: [
                                   BoxShadow(
-                                      color:
-                                          ThemeColors().grey.withOpacity(0.3),
+                                      color: ThemeColors.grey.withOpacity(0.3),
                                       blurRadius: 10.0,
                                       spreadRadius: 2.0,
                                       offset: const Offset(
@@ -106,8 +105,7 @@ class _SavedScreenState extends State<SavedScreen> {
                                       decoration: BoxDecoration(
                                           boxShadow: [
                                             BoxShadow(
-                                                color: ThemeColors()
-                                                    .grey
+                                                color: ThemeColors.grey
                                                     .withOpacity(0.3),
                                                 blurRadius: 10.0,
                                                 spreadRadius: 1.5,
@@ -131,8 +129,7 @@ class _SavedScreenState extends State<SavedScreen> {
                                         decoration: BoxDecoration(
                                             borderRadius: BorderRadius.circular(
                                                 Sizes.s5.r),
-                                            color: ThemeColors()
-                                                .white
+                                            color: ThemeColors.white
                                                 .withOpacity(0.5)),
                                         height: Sizes.s19.h,
                                         width: Sizes.s19.w,
@@ -141,7 +138,7 @@ class _SavedScreenState extends State<SavedScreen> {
                                           child: Icon(
                                             CupertinoIcons.bookmark_fill,
                                             size: 10,
-                                            color: ThemeColors().white,
+                                            color: ThemeColors.white,
                                           ),
                                         ),
                                       ),
@@ -179,7 +176,7 @@ class _SavedScreenState extends State<SavedScreen> {
                                               style: TextStyle(
                                                   fontWeight: FontWeight.w700,
                                                   fontSize: Sizes.s14.sp,
-                                                  color: ThemeColors().orange),
+                                                  color: ThemeColors.orange),
                                             ),
                                           ),
                                           ScreenUtil().setHorizontalSpacing(18),
@@ -196,13 +193,13 @@ class _SavedScreenState extends State<SavedScreen> {
                                             children: [
                                               SvgPicture.asset(
                                                 AppAssets.bedIcon,
-                                                // color: ThemeColors()
+                                                // color: ThemeColors
                                                 //     .textColor,
                                               ),
                                               RichText(
                                                   text: TextSpan(
                                                       style: TextStyle(
-                                                          color: ThemeColors()
+                                                          color: ThemeColors
                                                               .textColor),
                                                       children: const [
                                                     TextSpan(text: '3'),
@@ -215,12 +212,12 @@ class _SavedScreenState extends State<SavedScreen> {
                                             children: [
                                               SvgPicture.asset(
                                                 AppAssets.bathIcon,
-                                                color: ThemeColors().textColor,
+                                                color: ThemeColors.textColor,
                                               ),
                                               RichText(
                                                   text: TextSpan(
                                                       style: TextStyle(
-                                                          color: ThemeColors()
+                                                          color: ThemeColors
                                                               .textColor),
                                                       children: const [
                                                     TextSpan(text: '2'),
@@ -233,12 +230,12 @@ class _SavedScreenState extends State<SavedScreen> {
                                             children: [
                                               SvgPicture.asset(
                                                 AppAssets.carIcon,
-                                                color: ThemeColors().textColor,
+                                                color: ThemeColors.textColor,
                                               ),
                                               RichText(
                                                   text: TextSpan(
                                                       style: TextStyle(
-                                                          color: ThemeColors()
+                                                          color: ThemeColors
                                                               .textColor),
                                                       children: const [
                                                     TextSpan(text: '2'),
@@ -280,7 +277,7 @@ class _SavedScreenState extends State<SavedScreen> {
             //               height: Sizes.s103.h,
             //               width: Sizes.s280.w,
             //               decoration: BoxDecoration(
-            //                   color: ThemeColors().white,
+            //                   color: ThemeColors.white,
             //                   borderRadius:
             //                       BorderRadius.circular(Sizes.s15.r)),
             //               child: Row(
@@ -307,7 +304,7 @@ class _SavedScreenState extends State<SavedScreen> {
             //                           decoration: BoxDecoration(
             //                               borderRadius: BorderRadius.circular(
             //                                   Sizes.s5.r),
-            //                               color: ThemeColors()
+            //                               color: ThemeColors
             //                                   .white
             //                                   .withOpacity(0.5)),
             //                           height: Sizes.s19.h,
@@ -317,7 +314,7 @@ class _SavedScreenState extends State<SavedScreen> {
             //                             child: Icon(
             //                               CupertinoIcons.bookmark_fill,
             //                               size: 10,
-            //                               color: ThemeColors().white,
+            //                               color: ThemeColors.white,
             //                             ),
             //                           ),
             //                         ),
@@ -347,13 +344,13 @@ class _SavedScreenState extends State<SavedScreen> {
             //                             children: [
             //                               SvgPicture.asset(
             //                                 AppAssets.bedIcon,
-            //                                 // color: ThemeColors()
+            //                                 // color: ThemeColors
             //                                 //     .textColor,
             //                               ),
             //                               RichText(
             //                                   text: TextSpan(
             //                                       style: TextStyle(
-            //                                           color: ThemeColors()
+            //                                           color: ThemeColors
             //                                               .textColor),
             //                                       children: const [
             //                                     TextSpan(text: '3'),
@@ -366,12 +363,12 @@ class _SavedScreenState extends State<SavedScreen> {
             //                             children: [
             //                               SvgPicture.asset(
             //                                 AppAssets.bathIcon,
-            //                                 color: ThemeColors().textColor,
+            //                                 color: ThemeColors.textColor,
             //                               ),
             //                               RichText(
             //                                   text: TextSpan(
             //                                       style: TextStyle(
-            //                                           color: ThemeColors()
+            //                                           color: ThemeColors
             //                                               .textColor),
             //                                       children: const [
             //                                     TextSpan(text: '2'),
@@ -384,12 +381,12 @@ class _SavedScreenState extends State<SavedScreen> {
             //                             children: [
             //                               SvgPicture.asset(
             //                                 AppAssets.carIcon,
-            //                                 color: ThemeColors().textColor,
+            //                                 color: ThemeColors.textColor,
             //                               ),
             //                               RichText(
             //                                   text: TextSpan(
             //                                       style: TextStyle(
-            //                                           color: ThemeColors()
+            //                                           color: ThemeColors
             //                                               .textColor),
             //                                       children: const [
             //                                     TextSpan(text: '2'),
@@ -408,7 +405,7 @@ class _SavedScreenState extends State<SavedScreen> {
             //                           style: TextStyle(
             //                               fontWeight: FontWeight.w700,
             //                               fontSize: Sizes.s14.sp,
-            //                               color: ThemeColors().orange),
+            //                               color: ThemeColors.orange),
             //                         ),
             //                       )
             //                     ],
