@@ -71,7 +71,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                 border: Border.all(
                                     color: ThemeColors.orange, width: 3),
                                 shape: BoxShape.circle,
-                                image: DecorationImage(
+                                image: const DecorationImage(
                                     image: AssetImage(
                                         'assets/images/image/profilepic.png'),
                                     fit: BoxFit.cover)),
