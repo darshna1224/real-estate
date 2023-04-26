@@ -96,12 +96,12 @@ flutter:
   fonts:
     - family: Karla
       fonts:
-        - asset: assets\fonts\Karla-Regular.ttf
-        - asset: assets\fonts\Karla-Bold.ttf
+        - asset: assets\fonts\Karla\Karla-Regular.ttf
+        - asset: assets\fonts\Karla\Karla-Bold.ttf
     - family: Jost
       fonts:
-        - asset: assets\fonts\Jost-Regular.ttf
-        - asset: assets\fonts\Jost-Bold.ttf
+        - asset: assets\fonts\Jost\Jost-Regular.ttf
+        - asset: assets\fonts\Jost\Jost-Bold.ttf
        
   #
   # For details regarding fonts from package dependencies,

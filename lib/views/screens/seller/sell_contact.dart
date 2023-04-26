@@ -27,6 +27,28 @@ class _SellPersonContactState extends State<SellPersonContact> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                ScreenUtil().setVerticalSpacing(40.0),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: SizedBox(
+                        height: Sizes.s35.h,
+                        width: Sizes.s35.w,
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: SvgPicture.asset(
+                            AppAssets.backArrow,
+                            color: ThemeColors.black,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
                 ScreenUtil().setVerticalSpacing(80),
                 SvgPicture.asset(AppAssets.sellerform),
                 ScreenUtil().setVerticalSpacing(70),
