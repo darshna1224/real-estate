@@ -40,9 +40,13 @@ class _MenuDashBoardPageState extends State<MenuDashBoardPage>
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: const Color(0xffF5FBFA),
+      // backgroundColor: const Color(0xffF5FBFA),
+      backgroundColor: Colors.red,
       body: Stack(
-        children: [menu(context), const HomePage()],
+        children: [
+          // menu(context),
+          const HomePage()
+        ],
       ),
     );
   }
@@ -208,6 +212,9 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
           color: const Color(0xffF5F5F5),
           child: Scaffold(
             backgroundColor: const Color(0xffF5F5F5),
+
+            // backgroundColor: Colors.red,
+            // backgroundColor: ThemeColors.white,
             body: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -451,6 +458,17 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                   child: Container(
                                     decoration: BoxDecoration(
                                         color: ThemeColors.white,
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color: ThemeColors.grey
+                                                  .withOpacity(0.3),
+                                              blurRadius: 10.0,
+                                              spreadRadius: 2.0,
+                                              offset: const Offset(
+                                                5.0,
+                                                8.0,
+                                              ))
+                                        ],
                                         borderRadius:
                                             BorderRadius.circular(Sizes.s15.r)),
                                     height: Sizes.s265.h,

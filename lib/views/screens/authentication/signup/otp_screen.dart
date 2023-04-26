@@ -6,7 +6,6 @@ import 'package:real_estate/core/contants/elevatedbutton.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
 import 'package:real_estate/core/contants/sizes.dart';
-import 'package:real_estate/views/screens/home/bottombar.dart';
 import 'package:real_estate/views/screens/home/bottomnavi_bar.dart';
 
 class OtpScreen extends StatefulWidget {

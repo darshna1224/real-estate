@@ -77,7 +77,13 @@ class _BottomBarState extends State<BottomBar> {
                       floatingActionButtonLocation:
                           FloatingActionButtonLocation.miniCenterDocked,
                       floatingActionButton: FloatingActionButton(
+                        elevation: 0,
                         backgroundColor: ThemeColors.themeColor,
+                        shape: CircleBorder(
+                            side: BorderSide(
+                                color: ThemeColors.white,
+                                width: 5,
+                                strokeAlign: 0)),
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -87,13 +93,15 @@ class _BottomBarState extends State<BottomBar> {
                         },
                         child: const Icon(Icons.add),
                       ),
-                      backgroundColor: Colors.white,
+                      // backgroundColor: ThemeColors.orange,
+                      backgroundColor: const Color(0xffF5F5F5),
+
                       body: list[currentIndex],
                       bottomNavigationBar: BottomAppBar(
                         color: ThemeColors.white,
                         height: Sizes.s70.h,
-                        notchMargin: 5,
-                        shape: const CircularNotchedRectangle(),
+                        // notchMargin: 5,
+                        // shape: const CircularNotchedRectangle(),
                         child: Row(
                           // mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,

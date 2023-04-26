@@ -53,6 +53,7 @@ class Sizes {
   static const double s58 = 58;
   static const double s60 = 60;
   static const double s64 = 64;
+  static const double s65 = 65;
   static const double s66 = 66;
   static const double s68 = 68;
   static const double s70 = 70;

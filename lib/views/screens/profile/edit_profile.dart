@@ -166,7 +166,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                         }
                       },
                     ),
-                    ScreenUtil().setVerticalSpacing(Sizes.s70.h),
+                    ScreenUtil().setVerticalSpacing(Sizes.s60.h),
                     Row(
                       children: [
                         Flexible(

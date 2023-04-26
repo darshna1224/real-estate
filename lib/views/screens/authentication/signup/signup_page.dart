@@ -55,9 +55,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         fontSize: Sizes.s30.sp,
                         fontWeight: FontWeight.w700),
                   ),
-                  SizedBox(
-                    height: Sizes.s60.h,
-                  ),
+                  ScreenUtil().setVerticalSpacing(48),
                   Align(
                     alignment: Alignment.centerLeft,
                     child: Text(
@@ -81,7 +79,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         Validation.nameValidation(value.toString()),
                   ),
                   SizedBox(
-                    height: Sizes.s30.h,
+                    height: Sizes.s25.h,
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -106,7 +104,7 @@ class _SignupScreenState extends State<SignupScreen> {
                         Validation.emailidValidation(value.toString()),
                   ),
                   SizedBox(
-                    height: Sizes.s30.h,
+                    height: Sizes.s25.h,
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
