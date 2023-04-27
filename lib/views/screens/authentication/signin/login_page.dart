@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                       text: TextSpan(
                           text: 'Signing in you agree to ',
                           style: TextStyle(
-                              fontFamily: 'Karla',
+                              fontFamily: 'Jost',
                               color: ThemeColors.black,
                               fontSize: Sizes.s14.sp,
                               fontWeight: FontWeight.w400),

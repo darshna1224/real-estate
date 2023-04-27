@@ -1,21 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_utils/flutter_utils.dart';
 import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/sizes.dart';
-import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
-import 'package:real_estate/views/screens/home/detailapartment_sccreen.dart';
-import 'package:real_estate/views/screens/home/filter.dart';
-import 'package:real_estate/views/screens/home/home_page/view_apartment_list.dart';
-import 'package:real_estate/views/screens/home/home_page/view_property_list.dart';
-
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:real_estate/core/contants/app_assets.dart';
 
 class CustomDrawerScreen extends StatefulWidget {
   const CustomDrawerScreen({super.key});
