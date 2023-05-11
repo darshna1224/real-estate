@@ -42,12 +42,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: Sizes.s108.h,
                     width: Sizes.s108.w,
                   ),
-                  // SvgPicture.asset(
-                  //   AppAssets.loginLogo,
-                  //   height: Sizes.s108.h,
-                  //   width: Sizes.s108.w,
-                  //   fit: BoxFit.cover,
-                  // ),
+
                   ScreenUtil().setVerticalSpacing(40),
                   Text(
                     'Welcome Back',

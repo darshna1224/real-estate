@@ -6,7 +6,7 @@ import 'package:real_estate/core/contants/app_assets.dart';
 import 'package:real_estate/core/contants/sizes.dart';
 import 'package:real_estate/core/contants/textbutton.dart';
 import 'package:real_estate/core/utils/colors.dart';
-import 'package:real_estate/views/screens/home/detailapartment_sccreen.dart';
+import 'package:real_estate/views/screens/home/detailapartment_screen.dart';
 import 'package:real_estate/views/screens/home/home_page/view_apartment_list.dart';
 import 'package:real_estate/views/screens/home/home_page/view_property_list.dart';
 import 'package:real_estate/views/screens/profile/edit_profile.dart';

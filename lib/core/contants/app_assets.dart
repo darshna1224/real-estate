@@ -51,4 +51,5 @@ class AppAssets {
       'assets/images/icons/hotelApartmentIcon.svg';
   static const String penthouseIcon = 'assets/images/icons/penthouseIcon.svg';
   static const String duplexIcon = 'assets/images/icons/duplexIcon.svg';
+  static const String propertyImageExp = 'assets/images/image/property1.jpg';
 }

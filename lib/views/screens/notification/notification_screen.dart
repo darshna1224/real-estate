@@ -93,7 +93,7 @@ class _NotificationScreenState extends State<NotificationScreen> {
                                             height: Sizes.s68.h,
                                             width: Sizes.s68.w,
                                             child: Image.asset(
-                                                'assets/images/image/property1.jpg'),
+                                                AppAssets.propertyImageExp),
                                           ),
                                         ),
                                         Column(
